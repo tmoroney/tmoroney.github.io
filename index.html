@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.documentElement.setAttribute('data-theme', 'light'); // or 'dark'
+            document.getElementById('theme-switcher').addEventListener('click', function () {
+                var root = document.documentElement;
+                var currentTheme = root.getAttribute('data-theme');
+                var newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                root.setAttribute('data-theme', newTheme);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar-container">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="centered-content">
+            <div class="centered-text">
+                <p class="main-title">Hi. I'm Tom. <br> A Software Engineer.</p>
+                <button id="theme-switcher">Switch Theme</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>[Write a brief introduction about yourself and your skills/experience.]</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>[Description of Project 1]</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>[Description of Project 2]</p>
+        </div>
+        <!-- Add more project sections as needed -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>[Provide your contact information or a contact form.]</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 [Tom Moroney]. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

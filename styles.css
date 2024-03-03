@@ -1,0 +1,152 @@
+:root[data-theme="light"] {
+    --text: #0a1a0f;
+    --background: #f4faf5;
+    --primary: #56bd70;
+    --secondary: #9bcbd9;
+    --accent: #7b9ecc;
+}
+
+:root[data-theme="dark"] {
+    --text: #e5f5ea;
+    --background: #050a06;
+    --primary: #42a95b;
+    --secondary: #265564;
+    --accent: #335684;
+}
+
+/*
+--linearPrimarySecondary: linear-gradient(rgb(86, 189, 112), rgb(155, 203, 217));
+--linearPrimaryAccent: linear-gradient(rgb(86, 189, 112), rgb(123, 158, 204));
+--linearSecondaryAccent: linear-gradient(rgb(155, 203, 217), rgb(123, 158, 204));
+--radialPrimarySecondary: radial-gradient(rgb(86, 189, 112), rgb(155, 203, 217));
+--radialPrimaryAccent: radial-gradient(rgb(86, 189, 112), rgb(123, 158, 204));
+--radialSecondaryAccent: radial-gradient(rgb(155, 203, 217), rgb(123, 158, 204));
+*/
+
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a default font family and size */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: var(--background);
+}
+
+/* Center align content horizontally */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Add some padding and margin to elements */
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+p {
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+/* Add a border and some padding to a box */
+.box {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.navbar-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+    margin-bottom: 50vh;
+    /* viewport height */
+}
+
+.centered-text {
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'MarginDemo';
+    src: url('Margin DEMO.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Matolha';
+    src: url('Matolha-Regular.woff') format('woff');
+}
+
+.main-title {
+    font-size: 8rem;
+    color: var(--primary);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    font-family: 'Matolha', fallback;
+}
+
+/* Sticky navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: var(--accent);
+    backdrop-filter: blur(20px);
+    /* frosted glass effect */
+    /* gradient */
+    z-index: 100;
+    border-radius: 50px;
+    /* pill-like shape */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    /* shadow around the edges */
+    padding-left: 25px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Add some styles to the navbar links */
+.navbar a {
+    color: var(--text);
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Add a hover effect to the navbar links */
+.navbar a:hover {
+    color: var(--secondary);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
