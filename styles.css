@@ -1,18 +1,17 @@
 :root[data-theme="light"] {
-    --text: #0a1a0f;
-    --background: #f4faf5;
-    --primary: #56bd70;
-    --secondary: #9bcbd9;
-    --accent: #7b9ecc;
-}
-
-:root[data-theme="dark"] {
-    --text: #e5f5ea;
-    --background: #050a06;
-    --primary: #42a95b;
-    --secondary: #265564;
-    --accent: #335684;
-}
+    --text: #24130f;
+    --background: #f7f0ed;
+    --primary: #6d402c;
+    --secondary: #80c9cb;
+    --accent: #3d3d94;
+  }
+  :root[data-theme="dark"] {
+    --text: #f1e0dc;
+    --background: #130b08;
+    --primary: #d3a794;
+    --secondary: #337c7e;
+    --accent: #6a6ac2;
+  }
 
 /*
 --linearPrimarySecondary: linear-gradient(rgb(86, 189, 112), rgb(155, 203, 217));
@@ -21,6 +20,13 @@
 --radialPrimarySecondary: radial-gradient(rgb(86, 189, 112), rgb(155, 203, 217));
 --radialPrimaryAccent: radial-gradient(rgb(86, 189, 112), rgb(123, 158, 204));
 --radialSecondaryAccent: radial-gradient(rgb(155, 203, 217), rgb(123, 158, 204));
+
+--linearPrimarySecondary: linear-gradient(#56bd70, #9bcbd9);
+--linearPrimaryAccent: linear-gradient(#56bd70, #7b9ecc);
+--linearSecondaryAccent: linear-gradient(#9bcbd9, #7b9ecc);
+--radialPrimarySecondary: radial-gradient(#56bd70, #9bcbd9);
+--radialPrimaryAccent: radial-gradient(#56bd70, #7b9ecc);
+--radialSecondaryAccent: radial-gradient(#9bcbd9, #7b9ecc);
 */
 
 
@@ -113,7 +119,7 @@ p {
 .navbar {
     position: sticky;
     top: 0;
-    background: var(--accent);
+    background: var(--primary);
     backdrop-filter: blur(20px);
     /* frosted glass effect */
     /* gradient */
@@ -130,7 +136,7 @@ p {
 
 /* Add some styles to the navbar links */
 .navbar a {
-    color: var(--text);
+    color: var(--background);
     text-decoration: none;
     margin-right: 10px;
 }
