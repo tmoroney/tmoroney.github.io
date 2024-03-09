@@ -105,6 +105,7 @@
         transition: background 500ms, outline 500ms;
         background-position: top left;
         outline: transparent;
+        border-radius: 18px;
     }
 
     .grid .item:nth-child(5),
@@ -125,6 +126,7 @@
         background-position: top left;
         outline: transparent;
         background-image: linear-gradient(45deg, #34e89e 0%, #0f3443 60%);
+        border-radius: 18px;
     }
 }
 
@@ -289,5 +291,5 @@ p {
 .grid .item:nth-child(12),
 .grid .item:nth-child(13),
 .grid .item:nth-child(14) {
-    background-image: linear-gradient(45deg, #34e89e 0%, #0f3443 60%);
+    background-image: linear-gradient(45deg, #3434e8 0%, #0f3443 60%);
 }
