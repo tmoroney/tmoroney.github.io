@@ -11,9 +11,8 @@ function isInViewport(element) {
     );
 }
 
-// Listen for the scroll event
-window.addEventListener('scroll', function() {
-
+// Function to set the indicator
+function setIndicator() {
     // Make the indicator visible
     indicator.style.opacity = '1';
 
@@ -27,7 +26,40 @@ window.addEventListener('scroll', function() {
             break;
         }
     }
+}
+
+// Function to switch the theme
+function switchTheme() {
+    // Get the current theme
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+
+    // Switch the theme
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeSwitcher.textContent = '🌙'; // Show a moon when the theme is light
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeSwitcher.textContent = '☀️'; // Show a sun when the theme is dark
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.documentElement.setAttribute('data-theme', 'light'); // or 'dark'
 });
 
 // Get the indicator
 const indicator = document.querySelector('.indicator');
+const themeSwitcher = document.querySelector('#theme-switcher');
+
+// Listen for the scroll event
+window.addEventListener('scroll', setIndicator);
+// Add an event listener to the theme switcher
+themeSwitcher.addEventListener('click', switchTheme);
+
+// Set the initial state of the theme switcher
+const currentTheme = document.documentElement.getAttribute('data-theme');
+themeSwitcher.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+// Set the indicator when the page loads
+setIndicator();
+document.documentElement.setAttribute('data-theme', 'light'); // or 'dark'
