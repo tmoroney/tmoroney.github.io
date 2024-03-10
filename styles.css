@@ -1,4 +1,7 @@
-/* Link to colour scheme: https://www.realtimecolors.com/?colors=fff2eb-2c1b11-fcbf27-ffe100-4c5828&fonts=Baloo%20Chettan%202-Baloo%20Chettan%202 */
+/* 
+Colour scheme: https://www.realtimecolors.com/?colors=fff2eb-2c1b11-fcbf27-ffe100-4c5828&fonts=Baloo%20Chettan%202-Baloo%20Chettan%202
+Inspired by: https://dribbble.com/shots/23700196-Brewbolt-Branding
+*/
 
 @font-face {
     font-family: 'MarginDemo';
@@ -8,70 +11,6 @@
 @font-face {
     font-family: 'Matolha';
     src: url('Matolha-Regular.woff') format('woff');
-}
-
-:root[data-theme="light"] {
-    --text-50: #ffeee5;
-    --text-100: #ffdecc;
-    --text-200: #ffbd99;
-    --text-300: #ff9c66;
-    --text-400: #ff7a33;
-    --text-500: #ff5900;
-    --text-600: #cc4700;
-    --text-700: #993600;
-    --text-800: #662400;
-    --text-900: #331200;
-    --text-950: #1a0900;
-
-    --background-50: #f8f1ed;
-    --background-100: #f1e3da;
-    --background-200: #e2c6b6;
-    --background-300: #d4aa91;
-    --background-400: #c68d6c;
-    --background-500: #b87147;
-    --background-600: #935a39;
-    --background-700: #6e442b;
-    --background-800: #492d1d;
-    --background-900: #25170e;
-    --background-950: #120b07;
-
-    --primary-50: #fff8e6;
-    --primary-100: #fef0cd;
-    --primary-200: #fde19b;
-    --primary-300: #fdd368;
-    --primary-400: #fcc436;
-    --primary-500: #fbb504;
-    --primary-600: #c99103;
-    --primary-700: #976d02;
-    --primary-800: #644802;
-    --primary-900: #322401;
-    --primary-950: #191200;
-
-    --secondary-50: #fffce5;
-    --secondary-100: #fff9cc;
-    --secondary-200: #fff399;
-    --secondary-300: #ffed66;
-    --secondary-400: #ffe733;
-    --secondary-500: #ffe100;
-    --secondary-600: #ccb400;
-    --secondary-700: #998700;
-    --secondary-800: #665a00;
-    --secondary-900: #332d00;
-    --secondary-950: #1a1700;
-
-    --accent-50: #f5f7ed;
-    --accent-100: #eaefdc;
-    --accent-200: #d6dfb9;
-    --accent-300: #c1d095;
-    --accent-400: #acc072;
-    --accent-500: #98b04f;
-    --accent-600: #798d3f;
-    --accent-700: #5b6a2f;
-    --accent-800: #3d4620;
-    --accent-900: #1e2310;
-    --accent-950: #0f1208;
-    --linear-gradient: linear-gradient(270deg, #fe819e, #fe8e43);
-    --nav-background: rgba(255, 255, 255, 1);
 }
 
 :root[data-theme="dark"] {
@@ -134,27 +73,96 @@
     --accent-800: #d6dfb9;
     --accent-900: #eaefdc;
     --accent-950: #f5f7ed;
-    --linear-gradient: linear-gradient(270deg, #7e011e, #bc4c01);
-    --nav-background: rgba(0, 0, 0, 1);
+    --shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    --nav-background: rgba(110, 68, 43, 0.8);
+}
+
+:root[data-theme="light"] {
+    --text-50: #ffeee5;
+    --text-100: #ffdecc;
+    --text-200: #ffbd99;
+    --text-300: #ff9c66;
+    --text-400: #ff7a33;
+    --text-500: #ff5900;
+    --text-600: #cc4700;
+    --text-700: #993600;
+    --text-800: #662400;
+    --text-900: #331200;
+    --text-950: #1a0900;
+
+    --background-50: #f8f1ed;
+    --background-100: #f1e3da;
+    --background-200: #e2c6b6;
+    --background-300: #d4aa91;
+    --background-400: #c68d6c;
+    --background-500: #b87147;
+    --background-600: #935a39;
+    --background-700: #6e442b;
+    --background-800: #492d1d;
+    --background-900: #25170e;
+    --background-950: #120b07;
+
+    --primary-50: #fff8e6;
+    --primary-100: #fef0cd;
+    --primary-200: #fde19b;
+    --primary-300: #fdd368;
+    --primary-400: #fcc436;
+    --primary-500: #fbb504;
+    --primary-600: #c99103;
+    --primary-700: #976d02;
+    --primary-800: #644802;
+    --primary-900: #322401;
+    --primary-950: #191200;
+
+    --secondary-50: #fffce5;
+    --secondary-100: #fff9cc;
+    --secondary-200: #fff399;
+    --secondary-300: #ffed66;
+    --secondary-400: #ffe733;
+    --secondary-500: #ffe100;
+    --secondary-600: #ccb400;
+    --secondary-700: #998700;
+    --secondary-800: #665a00;
+    --secondary-900: #332d00;
+    --secondary-950: #1a1700;
+
+    --accent-50: #f5f7ed;
+    --accent-100: #eaefdc;
+    --accent-200: #d6dfb9;
+    --accent-300: #c1d095;
+    --accent-400: #acc072;
+    --accent-500: #98b04f;
+    --accent-600: #798d3f;
+    --accent-700: #5b6a2f;
+    --accent-800: #3d4620;
+    --accent-900: #1e2310;
+    --accent-950: #0f1208;
+    --shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    --nav-background: rgba(212, 170, 145, 0.8);
 }
 
 :root {
-    --color1: #B071FF;
-    --color2: #FF9C71;
+    --linearPrimarySecondary: linear-gradient(#fcbf27, #ffe100);
+    --linearPrimaryAccent: linear-gradient(#fcbf27, #4c5828);
+    --linearSecondaryAccent: linear-gradient(#ffe100, #4c5828);
+    --radialPrimarySecondary: radial-gradient(#fcbf27, #ffe100);
+    --radialPrimaryAccent: radial-gradient(#fcbf27, #4c5828);
+    --radialSecondaryAccent: radial-gradient(#ffe100, #4c5828);
 }
 
 @supports (display: grid) {
     .grid {
         display: grid;
-        grid-gap: 1.5vw;
+        grid-gap: 3vw;
         min-height: 100vh;
-        padding: 1.5vw;
+        padding: 4vw;
         padding-top: 80px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 50vh 30vh repeat(7, minmax(20vh, 1fr));
         grid-template-areas:
             "hero   hero"
             "big1   big1"
+            "big2   big2"
             "med1   med1"
             "med2   med2"
             "small1 small2"
@@ -166,13 +174,15 @@
 
     @media screen and (min-width: 750px) {
         .grid {
+            padding: 1.5vw;
             padding-top: 110px;
+            grid-gap: 1.5vw;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(5, 25vh);
             grid-template-areas:
                 "hero   hero   hero   med1   med1"
                 "hero   hero   hero   med2   med2"
-                "big1   big1   big1   big1   big1"
+                "big1   big1   big1   big2   big2"
                 "small1 small2 small3 small4 small5"
                 "small6 small7 small8 small9 small10";
         }
@@ -180,13 +190,17 @@
 
     @media screen and (min-width: 1400px) {
         .grid {
-            grid-template-columns: repeat(6, 1fr);
+            padding: 1.5vw;
+            padding-top: 110px;
+            grid-gap: 1.5vw;
+            grid-template-columns: repeat(7, 1fr);
             grid-template-rows: auto;
             grid-template-areas:
-                "small1 hero   hero hero med1   med1"
-                "small2 hero   hero hero med2   med2"
-                "small3 small5 big1 big1 small7 small8"
-                "small4 small6 big1 big1 small9 small10";
+                "small1 hero   hero hero hero   big1   big1"
+                "small2 hero   hero hero hero   big1   big1"
+                "small3 small6 small7 big2 big2   big1   big1"
+                "small4 med1   med1 big2 big2   med2   med2"
+                "small5 med1   med1 big2 big2   med2   med2";
         }
     }
 
@@ -197,6 +211,7 @@
     .grid .item:nth-child(4) {
         position: relative;
         padding: 1vw;
+        box-shadow: var(--shadow);
         background-position: left bottom;
         background-size: 150% 100%;
         transition: background 500ms, outline 500ms;
@@ -215,11 +230,10 @@
     .grid .item:nth-child(9),
     .grid .item:nth-child(10),
     .grid .item:nth-child(11),
-    .grid .item:nth-child(12),
-    .grid .item:nth-child(13),
-    .grid .item:nth-child(14) {
+    .grid .item:nth-child(12) {
         position: relative;
         padding: 1vw;
+        box-shadow: var(--shadow);
         background-position: left bottom;
         background-size: 150% 100%;
         transition: background 500ms, outline 500ms;
@@ -262,29 +276,23 @@ body {
     #theme-switcher {
         position: fixed;
         top: 20px;
-        right: 30px;
+        right: 50px;
         z-index: 1000;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         border-radius: 50%;
-        background: var(--background-200);
+        background: var(--nav-background);
+        backdrop-filter: blur(30px);
+        border: solid 2px var(--nav-background);
         box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
         cursor: pointer;
         transition: background 0.3s ease;
         outline: none;
         opacity: 1;
     }
-}
-
-/* Center align content horizontally */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 /* Add some padding and margin to elements */
@@ -312,16 +320,17 @@ p {
 
 .centered-text {
     text-align: center;
+    font-family: 'Matolha', fallback;
+    color: var(--text-50);
 }
 
 .header {
-    color: var(--text-100);
-    font-family: 'Matolha', fallback;
+    font-size: 2.5rem;
 }
 
 @media screen and (min-width: 750px) {
     .header {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -343,8 +352,8 @@ p {
     margin-top: 20px;
     position: fixed;
     top: 0;
-    background: var(--background-300);
-    backdrop-filter: blur(20px);
+    background: var(--nav-background);
+    backdrop-filter: blur(30px);
     z-index: 100;
     border-radius: 50px;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
@@ -355,7 +364,7 @@ p {
     padding-bottom: 18px;
     font-size: 1.1rem;
     font-weight: 500;
-    border: 2px solid var(--background-300);
+    border: 2px solid var(--nav-background);
 }
 
 .indicator {
@@ -373,7 +382,7 @@ p {
     color: var(--text-800);
     text-decoration: none;
     position: relative;
-    padding: 16px;
+    padding: 4vw;
 }
 
 @media screen and (min-width: 750px) {
@@ -393,6 +402,22 @@ p {
     margin: 0 0px;
 }
 
+.project-list ul {
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.project-list ul li {
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    /* change cursor to pointer */
+    cursor: pointer;
+}
+
+.project-list ul li:hover {
+    font-style: italic;
+}
+
 
 /* Bento box grid styling */
 .grid .item:hover,
@@ -403,33 +428,36 @@ p {
 /* Grid item specific styles */
 .grid .item:nth-child(1) {
     grid-area: hero;
-    background: var(--accent-800);
+    background-image: var(--radialPrimarySecondary);
 }
 
 .grid .item:nth-child(2) {
     grid-area: big1;
-    background: var(--accent-500);
+    background: var(--primary-500);
 }
 
 .grid .item:nth-child(3) {
-    grid-area: med1;
-    background: var(--secondary-500);
+    grid-area: big2;
+    background: var(--background-200);
 }
 
 .grid .item:nth-child(4) {
-    grid-area: med2;
-    background: var(--accent-950);
+    grid-area: med1;
+    background-image: url("https://ik.imgkit.net/3vlqs5axxjf/MM-TP/ik-seo/https://cdn.travelpulse.com/images/3faaedf4-a957-df11-b491-006073e71405/a790e5b2-a42c-4f77-8f31-9683b5647778/source/Image-PHOTO-Terraced-rice-field-landscape-near-Sap.jpg?tr=w-1400%2Ch-650%2Cfo-auto");
+
 }
 
-.grid .item:nth-child(5),
+.grid .item:nth-child(5) {
+    grid-area: med2;
+    background: var(--accent-300);
+}
+
 .grid .item:nth-child(6),
 .grid .item:nth-child(7),
 .grid .item:nth-child(8),
 .grid .item:nth-child(9),
 .grid .item:nth-child(10),
 .grid .item:nth-child(11),
-.grid .item:nth-child(12),
-.grid .item:nth-child(13),
-.grid .item:nth-child(14) {
+.grid .item:nth-child(12) {
     background: var(--background-500);
 }
