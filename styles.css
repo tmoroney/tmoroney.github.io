@@ -9,19 +9,23 @@
 }
 
 :root[data-theme="light"] {
-    --text: #24130f;
-    --background: #f7f0ed;
-    --primary: #6d402c;
-    --secondary: #80c9cb;
-    --accent: #3d3d94;
+    --text: #000714;
+    --background: #ebf3ff;
+    --primary: #1c63fd;
+    --secondary: #fe819e;
+    --accent: #fe8e43;
+    --linear-gradient: linear-gradient(270deg, #fe819e, #fe8e43);
+    --nav-background: rgba(255, 255, 255, 0.3);
 }
 
 :root[data-theme="dark"] {
-    --text: #f1e0dc;
-    --background: #130b08;
-    --primary: #d3a794;
-    --secondary: #337c7e;
-    --accent: #6a6ac2;
+    --text: #ebf2ff;
+    --background: #000814;
+    --primary: #024ae3;
+    --secondary: #7e011e;
+    --accent: #bc4c01;
+    --linear-gradient: linear-gradient(270deg, #7e011e, #bc4c01);
+    --nav-background: rgba(0, 0, 0, 0.3);
 }
 
 /*
@@ -138,12 +142,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Set a default font family and size */
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background);
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    background-size: 400% 400%;
+    background-image: var(--linear-gradient);
+    animation: gradient 15s ease infinite;
 }
 
 /* Center align content horizontally */
@@ -186,7 +209,7 @@ p {
 
 .header {
     font-size: 2rem;
-    color: var(--primary);
+    color: var(--text);
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     font-family: 'Matolha', fallback;
 }
@@ -205,7 +228,6 @@ p {
 
 /* Navbar styles */
 .navbar-container {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     margin-left: auto;
@@ -213,28 +235,40 @@ p {
 }
 
 .navbar {
-    position: sticky;
-    /* Stick the navbar to the top of the screen */
+    margin-top: 20px;
+    position: fixed;
     top: 0;
-    background: var(--primary);
+    background: var(--nav-background);
     backdrop-filter: blur(20px);
-    /* frosted glass effect */
     z-index: 100;
     border-radius: 50px;
-    /* pill-like shape */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-    /* shadow around the edges */
-    padding-left: 25px;
-    padding-right: 15px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
+    padding-left: 2px;
+    padding-right: 2px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
+.indicator {
+    height: calc(100% - 4px);
+    width: 100px;
+    border: 2px solid var(--background);
+    position: absolute;
+    transition: left 0.3s ease, width 0.3s ease, opacity 0.5s ease;
+    border-radius: 50px;
+    top: 2px;
+    left: 2px;
+    opacity: 0;
+    /* Hide the indicator by default */
+    box-shadow: inset 0 0 30px var(--background), inset 0 0 20px var(--background);
+}
+
 /* Navbar links */
 .navbar a {
-    color: var(--background);
+    color: var(--text);
     text-decoration: none;
-    margin-right: 10px;
+    position: relative;
+    padding: 10px 20px;
 }
 
 .navbar a:hover {
@@ -246,11 +280,10 @@ p {
     display: flex;
     justify-content: center;
     list-style-type: none;
-    padding: 0;
 }
 
 .navbar ul li {
-    margin: 0 10px;
+    margin: 0 0px;
 }
 
 
