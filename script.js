@@ -43,10 +43,6 @@ function switchTheme() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.documentElement.setAttribute('data-theme', 'light'); // or 'dark'
-});
-
 // Get the indicator
 const indicator = document.querySelector('.indicator');
 const themeSwitcher = document.querySelector('#theme-switcher');
@@ -56,10 +52,12 @@ window.addEventListener('scroll', setIndicator);
 // Add an event listener to the theme switcher
 themeSwitcher.addEventListener('click', switchTheme);
 
-// Set the initial state of the theme switcher
-const currentTheme = document.documentElement.getAttribute('data-theme');
-themeSwitcher.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-
 // Set the indicator when the page loads
 setIndicator();
-document.documentElement.setAttribute('data-theme', 'light'); // or 'dark'
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Set the initial state of the theme switcher
+    document.documentElement.setAttribute('data-theme', 'dark'); // or 'dark'
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    themeSwitcher.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+});
