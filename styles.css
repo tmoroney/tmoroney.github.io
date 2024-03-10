@@ -28,6 +28,12 @@
     --nav-background: rgba(0, 0, 0, 0.3);
 }
 
+:root {
+    --color1: #B071FF;
+    --color2: #FF9C71;
+}
+
+
 /*
 --linearPrimarySecondary: linear-gradient(rgb(86, 189, 112), rgb(155, 203, 217));
 --linearPrimaryAccent: linear-gradient(rgb(86, 189, 112), rgb(123, 158, 204));
@@ -193,6 +199,21 @@ h2 {
 p {
     margin-bottom: 10px;
     color: var(--text);
+}
+
+svg {
+    filter: blur(100px);
+    position: absolute;
+    justify-content: center;
+    z-index: -100;
+    height: 100vh;
+    width: 80vw;
+}
+
+.svg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .centered-content {
