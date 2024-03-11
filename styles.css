@@ -155,7 +155,7 @@ also inspired by: https://www.littlewebsite.co/
     .grid {
         display: grid;
         grid-gap: 3vw;
-        min-height: 100vh;
+        min-height: 140vh;
         padding: 4vw;
         padding-top: 80px;
         grid-template-columns: repeat(2, 1fr);
@@ -194,14 +194,13 @@ also inspired by: https://www.littlewebsite.co/
             padding: 1.5vw;
             padding-top: 110px;
             grid-gap: 1.5vw;
-            grid-template-columns: repeat(7, 1fr);
-            grid-template-rows: auto;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(4, 30vh);
             grid-template-areas:
-                "small1 hero   hero hero hero   big1   big1"
-                "small2 hero   hero hero hero   big1   big1"
-                "small3 small6 small7 big2 big2   big1   big1"
-                "small4 med1   med1 big2 big2   med2   med2"
-                "small5 med1   med1 big2 big2   med2   med2";
+                "hero   hero   hero   small1 small2   small3"
+                "hero   hero   hero   big1   big1     small4"
+                "small6 small7 small8 big1   big1     small5"
+                "small9 med1   med1   small10 med2     med2"
         }
     }
 
@@ -231,12 +230,16 @@ also inspired by: https://www.littlewebsite.co/
     .grid .item:nth-child(9),
     .grid .item:nth-child(10),
     .grid .item:nth-child(11),
-    .grid .item:nth-child(12) {
+    .grid .item:nth-child(12),
+    .grid .item:nth-child(13),
+    .grid .item:nth-child(14),
+    .grid .item:nth-child(15),
+    .grid .item:nth-child(16) {
         position: relative;
         padding: 1vw;
         box-shadow: var(--shadow);
         background-position: left bottom;
-        background-size: 150% 100%;
+        background-size: 100% 100%;
         transition: background 500ms, outline 500ms;
         background-position: top left;
         outline: transparent;
@@ -277,7 +280,8 @@ body {
     #theme-switcher {
         position: fixed;
         top: 20px;
-        right: 50px;
+        right: 0px;
+        margin-right: 2vw;
         z-index: 1000;
         display: flex;
         justify-content: center;
@@ -309,36 +313,6 @@ h2 {
 
 p {
     margin-bottom: 10px;
-}
-
-.centered-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20vh;
-    margin-bottom: 50vh;
-}
-
-.centered-text {
-    text-align: center;
-    font-family: 'Matolha', fallback;
-    color: var(--text-50);
-}
-
-.header {
-    font-size: 2.5rem;
-}
-
-@media screen and (min-width: 750px) {
-    .header {
-        font-size: 2.5rem;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .header {
-        font-size: 3rem;
-    }
 }
 
 /* Navbar styles */
@@ -405,7 +379,7 @@ p {
 
 .project-list ul {
     list-style: none;
-    font-size: 1.5rem;
+    font-size: 10%;
 }
 
 .project-list ul li {
@@ -419,6 +393,63 @@ p {
     font-style: italic;
 }
 
+.hero {
+    position: absolute;
+    border-radius: 18px;
+    border: 10px solid var(--background-200);
+    width: 100%;
+    height: 100%;
+    opacity: 0.55;
+    background-image: url("https://a.cdn-hotels.com/gdcs/production99/d1691/91873cc4-40c0-4eb3-aac2-c4761256e1bf.jpg?impolicy=fcrop&w=800&h=533&q=medium");
+    background-size: cover;
+    z-index: 1;
+    /* Center the background image */
+    background-position: center;
+    /* Add an inset shadow */
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Profile photo */
+.profile-photo {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    border: 8px solid var(--background-200);
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+    margin-bottom: 50vh;
+}
+
+.centered-text {
+    text-align: center;
+    font-family: 'Matolha', fallback;
+    color: var(--text-900);
+    z-index: 50;
+}
+
+.header {
+    font-size: 2.5rem;
+}
+
+@media screen and (min-width: 750px) {
+    .header {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .header {
+        font-size: 3.5rem;
+    }
+}
+
 
 /* Bento box grid styling */
 .grid .item:hover,
@@ -429,7 +460,7 @@ p {
 /* Grid item specific styles */
 .grid .item:nth-child(1) {
     grid-area: hero;
-    background-image: var(--radialPrimarySecondary);
+    background: var(--background-200);
 }
 
 .grid .item:nth-child(2) {
@@ -437,28 +468,35 @@ p {
     background: var(--primary-500);
 }
 
+/*
 .grid .item:nth-child(3) {
     grid-area: big2;
     background: var(--background-200);
 }
+*/
 
-.grid .item:nth-child(4) {
+.grid .item:nth-child(3) {
     grid-area: med1;
     background-image: url("https://ik.imgkit.net/3vlqs5axxjf/MM-TP/ik-seo/https://cdn.travelpulse.com/images/3faaedf4-a957-df11-b491-006073e71405/a790e5b2-a42c-4f77-8f31-9683b5647778/source/Image-PHOTO-Terraced-rice-field-landscape-near-Sap.jpg?tr=w-1400%2Ch-650%2Cfo-auto");
 
 }
 
-.grid .item:nth-child(5) {
+.grid .item:nth-child(4) {
     grid-area: med2;
     background: var(--accent-300);
 }
 
+.grid .item:nth-child(5),
 .grid .item:nth-child(6),
 .grid .item:nth-child(7),
 .grid .item:nth-child(8),
 .grid .item:nth-child(9),
 .grid .item:nth-child(10),
 .grid .item:nth-child(11),
-.grid .item:nth-child(12) {
+.grid .item:nth-child(12),
+.grid .item:nth-child(13),
+.grid .item:nth-child(14),
+.grid .item:nth-child(15),
+.grid .item:nth-child(16) {
     background: var(--background-500);
 }
