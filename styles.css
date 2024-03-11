@@ -272,16 +272,6 @@ body {
     color: var(--text-900);
 }
 
-.fa {
-    padding: 20px;
-    padding-top: 0px;
-    font-size: 30px;
-    width: 80px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-}
-
 #theme-switcher {
     opacity: 0;
 }
@@ -393,7 +383,7 @@ body {
     border: 10px solid var(--background-200);
     width: 100%;
     height: 100%;
-    opacity: 0.55;
+    opacity: 0.5;
     background-image: url("https://a.cdn-hotels.com/gdcs/production99/d1691/91873cc4-40c0-4eb3-aac2-c4761256e1bf.jpg?impolicy=fcrop&w=800&h=533&q=medium");
     background-size: cover;
     z-index: 1;
@@ -402,7 +392,27 @@ body {
     /* Add an inset shadow */
     box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
     /* Add transition on hover */
-    transition: border 0.8s;
+    transition: border 0.8s, background-position 0.8s, opacity 0.8s;
+}
+
+.hero:hover {
+    background-position: bottom right;
+    opacity: 0.62;
+    border-color: var(--background-950);
+}
+
+.fa {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    font-size: 30px;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-950);
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
+    /* turn pointer events on */
+    pointer-events: auto;
 }
 
 /* Profile photo */
@@ -413,12 +423,14 @@ body {
     display: inline-block;
     vertical-align: middle;
     border: 8px solid var(--background-200);
+    margin-bottom: 0.5%;
 }
 
 .centered-content {
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
 }
 
 .centered-text {
@@ -426,6 +438,7 @@ body {
     font-family: 'Matolha', fallback;
     color: var(--text-900);
     z-index: 50;
+    pointer-events: none;
 }
 
 .header {
