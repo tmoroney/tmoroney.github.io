@@ -75,6 +75,7 @@ also inspired by: https://www.littlewebsite.co/
     --accent-900: #eaefdc;
     --accent-950: #f5f7ed;
     --shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    --text-shadow: 0px 0px 40px rgba(0, 0, 0, 1);
     --nav-background: rgba(110, 68, 43, 0.8);
 }
 
@@ -139,6 +140,7 @@ also inspired by: https://www.littlewebsite.co/
     --accent-900: #1e2310;
     --accent-950: #0f1208;
     --shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    --text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     --nav-background: rgba(212, 170, 145, 0.8);
 }
 
@@ -149,6 +151,7 @@ also inspired by: https://www.littlewebsite.co/
     --radialPrimarySecondary: radial-gradient(#fcbf27, #ffe100);
     --radialPrimaryAccent: radial-gradient(#fcbf27, #4c5828);
     --radialSecondaryAccent: radial-gradient(#ffe100, #4c5828);
+    --curved-border: 18px;
 }
 
 @supports (display: grid) {
@@ -206,6 +209,11 @@ also inspired by: https://www.littlewebsite.co/
 
     .grid .item {
         overflow: hidden;
+        border-radius: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: transparent;
     }
 
     /* Base styling for grid items */
@@ -220,11 +228,6 @@ also inspired by: https://www.littlewebsite.co/
         background-size: 150% 100%;
         transition: background 500ms, outline 500ms;
         background-position: top left;
-        outline: transparent;
-        border-radius: 18px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .grid .item:nth-child(5),
@@ -246,12 +249,6 @@ also inspired by: https://www.littlewebsite.co/
         background-size: 100% 100%;
         transition: background 500ms, outline 500ms;
         background-position: top left;
-        outline: transparent;
-        background-image: linear-gradient(45deg, #34e89e 0%, #0f3443 60%);
-        border-radius: 18px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
 
@@ -271,7 +268,7 @@ body {
     font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
     background-size: 400% 400%;
-    background: var(--background-100);
+    background: var(--background-200);
     transition: background 0.3s ease, border 0.8s;
     color: var(--text-900);
 }
@@ -388,7 +385,7 @@ body {
 
 .hero {
     position: absolute;
-    border-radius: 18px;
+    border-radius: var(--curved-border);
     border: 10px solid var(--background-200);
     width: 100%;
     height: 100%;
@@ -436,13 +433,6 @@ body {
     margin-bottom: 0.5%;
 }
 
-.centered-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-}
-
 .centered-text {
     text-align: center;
     color: var(--text-900);
@@ -467,12 +457,46 @@ body {
     }
 }
 
+
+/* Bento container */
+.bento-container {
+    text-align: center;
+    z-index: 50;
+    text-shadow: var(--text-shadow);
+    margin-bottom: 8%;
+}
+.bento-container .primary {
+    font-size: 3rem;
+}
+.bento-container .secondary {
+    font-size: 1rem;
+    margin-top: -1rem;
+}
+@media screen and (min-width: 750px) {
+    .bento-container .primary {
+        font-size: 4rem;
+    }
+    .bento-container .secondary {
+        font-size: 1.4rem;
+        margin-top: -1.2rem;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .bento-container .primary {
+        font-size: 6rem;
+    }
+    .bento-container .secondary {
+        font-size: 1.4rem;
+        margin-top: -1.2rem;
+    }
+}
+
 @keyframes scaleDown {
     0% {
         transform: scale(1);
         opacity: 0;
     }
-    50% {
+    60% {
         opacity: 0.8;
     }
     80% {
@@ -487,12 +511,13 @@ body {
 .square {
     width: 140%;
     aspect-ratio: 1/1; /* Set the aspect ratio to 1:1 for a perfect square */
-    border: 4px solid var(--text-500);
+    border: 3px solid var(--text-500);
     rotate: 45deg;
     position: absolute;
     opacity: 0; /* Set initial opacity to 0 */
-    animation: scaleDown 10s ease-out infinite;
+    animation: scaleDown 9s ease-out infinite;
     z-index: 0;
+    transition: border-color 0.3s ease-in-out;
 }
 
 .square:nth-child(1) {
@@ -511,25 +536,109 @@ body {
     animation-delay: 4s;
 }
 .square:nth-child(6) {
-    animation: scaleDown 10s ease-out infinite;
     animation-delay: 5s;
 }
 .square:nth-child(7) {
-    animation: scaleDown 10s ease-out infinite;
     animation-delay: 6s;
 }
 .square:nth-child(8) {
-    animation: scaleDown 10s ease-out infinite;
     animation-delay: 7s;
 }
 .square:nth-child(9) {
-    animation: scaleDown 10s ease-out infinite;
     animation-delay: 8s;
 }
 .square:nth-child(10) {
-    animation: scaleDown 10s ease-out infinite;
     animation-delay: 9s;
 }
+.square:nth-child(11) {
+    animation: scaleDown 9s ease-out;
+    width: 100%;
+    animation-delay: 0s;
+}
+.square:nth-child(12) {
+    animation: scaleDown 9s ease-out;
+    width: 125%;
+    animation-delay: 0.5s;
+}
+.square:nth-child(13) {
+    animation-delay: 12s;
+}
+.square:nth-child(14) {
+    animation-delay: 13s;
+}
+.square:nth-child(15) {
+    animation-delay: 14s;
+}
+
+/* bouncing box animation */
+@keyframes bounceAnimation1 {
+    0% {
+        transform: translate(-200%, -200%);
+    }
+    25% {
+        transform: translate(-200%, +200%);
+    }
+    50% {
+        transform: translate(+200%, +200%);
+    }
+    75% {
+        transform: translate(+200%, -200%);
+    }
+    100% {
+        transform: translate(-200%, -200%);
+    }
+}
+@keyframes bounceAnimation2 {
+    0% {
+        transform: translate(+200%, +200%);
+    }
+    25% {
+        transform: translate(+200%, -200%);
+    }
+    50% {
+        transform: translate(-200%, -200%);
+    }
+    75% {
+        transform: translate(-200%, +200%);
+    }
+    100% {
+        transform: translate(+200%, +200%);
+    }
+}
+
+.square-box {
+    width: 8vw;
+    aspect-ratio: 1/1; /* Set the aspect ratio to 1:1 for a perfect square */
+    border-radius: 2vw;
+    background-color: var(--background-200);
+    border: 3px solid var(--text-500);
+    position: absolute;
+    z-index: 0;
+    transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    animation: bounceAnimation1 4s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    color: var(--text-500);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+@media screen and (min-width: 750px) {
+    .square-box {
+        width: 2vw;
+        border-radius: 0.5vw;
+    }
+}
+.square-box:nth-child(1) {
+    animation-delay: 0s;
+}
+.square-box:nth-child(2) {
+    animation: bounceAnimation2 4s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+
 
 
 /*
@@ -574,8 +683,7 @@ body {
 .grid .item:nth-child(15),
 .grid .item:nth-child(16) {
     /* background: var(--background-500); */
-    background: var(--background-50);
-    border-color: var(--background-200);
+    background: var(--background-100);
 }
 
 .grid .item:nth-child(5):hover,
@@ -590,8 +698,8 @@ body {
 .grid .item:nth-child(14):hover,
 .grid .item:nth-child(15):hover,
 .grid .item:nth-child(16):hover {
-    /* background: var(--background-500); */
-    border: 5px solid var(--background-200);  
-    transition: border 0.3s ease-in-out;
     /* Add your hover effect styles here */
+    .square {
+        border-color: var(--text-200);
+    }
 }
