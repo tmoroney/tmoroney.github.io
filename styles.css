@@ -76,6 +76,7 @@ also inspired by: https://www.littlewebsite.co/
     --accent-950: #f5f7ed;
     --shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     --text-shadow: 0px 0px 40px rgba(0, 0, 0, 1);
+    --inset-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
     --nav-background: rgba(110, 68, 43, 0.8);
 }
 
@@ -141,6 +142,7 @@ also inspired by: https://www.littlewebsite.co/
     --accent-950: #0f1208;
     --shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     --text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    --inset-shadow: inset 5px 0px 0px rgba(0, 0, 0, 0.1);
     --nav-background: rgba(212, 170, 145, 0.8);
 }
 
@@ -214,6 +216,7 @@ also inspired by: https://www.littlewebsite.co/
         justify-content: center;
         align-items: center;
         outline: transparent;
+        transition: background 500ms, outline 500ms;
     }
 
     /* Base styling for grid items */
@@ -226,8 +229,6 @@ also inspired by: https://www.littlewebsite.co/
         box-shadow: var(--shadow);
         background-position: left bottom;
         background-size: 150% 100%;
-        transition: background 500ms, outline 500ms;
-        background-position: top left;
     }
 
     .grid .item:nth-child(5),
@@ -247,8 +248,6 @@ also inspired by: https://www.littlewebsite.co/
         box-shadow: var(--shadow);
         background-position: left bottom;
         background-size: 100% 100%;
-        transition: background 500ms, outline 500ms;
-        background-position: top left;
     }
 }
 
@@ -457,34 +456,69 @@ body {
     }
 }
 
+.card-letters {
+    --x: 0px;
+    --y: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    color: var(--text-300);
+    font-size: 2rem;
+    font-weight: 500;
+    word-wrap: break-word;
+    opacity: 0.2;
+    transition: opacity 400ms;
+    scale: 1.03;
+    font-family: 'MarginDemo', fallback;
+}
 
 /* Bento container */
 .bento-container {
     text-align: center;
     z-index: 50;
     text-shadow: var(--text-shadow);
-    margin-bottom: 8%;
+    margin-bottom: 2vh;
 }
+
 .bento-container .primary {
     font-size: 3rem;
 }
+
+.bento-container .primary-small {
+    font-size: 3rem;
+}
+
 .bento-container .secondary {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-top: -1rem;
 }
+
 @media screen and (min-width: 750px) {
     .bento-container .primary {
         font-size: 4rem;
     }
+
+    .bento-container .primary-small {
+        font-size: 2.5rem;
+    }
+
     .bento-container .secondary {
         font-size: 1.4rem;
         margin-top: -1.2rem;
     }
 }
+
 @media screen and (min-width: 1400px) {
     .bento-container .primary {
         font-size: 6rem;
     }
+
+    .bento-container .primary-small {
+        font-size: 3rem;
+    }
+
     .bento-container .secondary {
         font-size: 1.4rem;
         margin-top: -1.2rem;
@@ -496,12 +530,15 @@ body {
         transform: scale(1);
         opacity: 0;
     }
+
     60% {
         opacity: 0.8;
     }
+
     80% {
         opacity: 0.6;
     }
+
     100% {
         transform: scale(0);
         opacity: 0;
@@ -510,62 +547,80 @@ body {
 
 .square {
     width: 140%;
-    aspect-ratio: 1/1; /* Set the aspect ratio to 1:1 for a perfect square */
+    aspect-ratio: 1/1;
+    /* Set the aspect ratio to 1:1 for a perfect square */
     border: 3px solid var(--text-500);
     rotate: 45deg;
     position: absolute;
-    opacity: 0; /* Set initial opacity to 0 */
+    opacity: 0;
+    /* Set initial opacity to 0 */
     animation: scaleDown 9s ease-out infinite;
     z-index: 0;
-    transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out, background-color 0.2s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.2s ease-in-out;
 }
 
 .square:nth-child(1) {
-    animation-delay: 0s; /* No delay for the first square */
+    animation-delay: 0s;
+    /* No delay for the first square */
 }
+
 .square:nth-child(2) {
-    animation-delay: 1s; /* 0.5s delay for the second square */
+    animation-delay: 1s;
+    /* 0.5s delay for the second square */
 }
+
 .square:nth-child(3) {
     animation-delay: 2s;
 }
+
 .square:nth-child(4) {
     animation-delay: 3s;
 }
+
 .square:nth-child(5) {
     animation-delay: 4s;
 }
+
 .square:nth-child(6) {
     animation-delay: 5s;
 }
+
 .square:nth-child(7) {
     animation-delay: 6s;
 }
+
 .square:nth-child(8) {
     animation-delay: 7s;
 }
+
 .square:nth-child(9) {
     animation-delay: 8s;
 }
+
 .square:nth-child(10) {
     animation-delay: 9s;
 }
+
 .square:nth-child(11) {
     animation: scaleDown 9s ease-out;
     width: 100%;
     animation-delay: 0s;
 }
+
 .square:nth-child(12) {
     animation: scaleDown 9s ease-out;
     width: 125%;
     animation-delay: 0.5s;
 }
+
 .square:nth-child(13) {
     animation-delay: 12s;
 }
+
 .square:nth-child(14) {
     animation-delay: 13s;
 }
+
 .square:nth-child(15) {
     animation-delay: 14s;
 }
@@ -573,89 +628,225 @@ body {
 @keyframes moveUp {
     0% {
         opacity: 0;
-        bottom:-15%;
+        bottom: -15%;
     }
+
     10% {
-        opacity: 0.5;
+        opacity: 0.6;
     }
+
     100% {
         opacity: 0.2;
-        bottom:140%;
+        bottom: 140%;
     }
 }
 
 /* bubbles with names that start at a random position at the botton container and then move up in a random pattern */
 .bubble {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background-color: var(--background-200);
     border: 3px solid var(--text-500);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    animation: moveUp 9s ease-out infinite;
+    animation: moveUp 9.3s ease-out infinite;
     animation-delay: 0s;
     z-index: 0;
     opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out, background-color 0.2s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
 }
 
+@media screen and (min-width: 750px) {
+    .bubble {
+        width: 4vw;
+        height: 4vw;
+    }
+}
+
+/* extra bubble because it's invisible */
 .bubble:nth-child(1) {
     animation-delay: 0s;
-    left: 5%;
-    bottom: 0%;
-}
-.bubble:nth-child(2) {
-    animation-delay: 1s;
-    left: 50%;
-    bottom: 0%;
-}
-.bubble:nth-child(3) {
-    animation-delay: 2s;
-    left: 5%;
-    bottom: 0%;
-}
-.bubble:nth-child(4) {
-    animation-delay: 3s;
-    left: 70%;
-    bottom: 0%;
-}
-.bubble:nth-child(5) {
-    animation-delay: 4s;
-    left: 10%;
-    bottom: 0%;
-}
-.bubble:nth-child(6) {
-    animation-delay: 5s;
     left: 60%;
-    bottom: 0%;
+    bottom: -50%;
 }
-.bubble:nth-child(7) {
-    animation-delay: 6s;
+
+/* No delay for the first bubble */
+.bubble:nth-child(2) {
+    animation-delay: 0s;
     left: 40%;
-    bottom: 0%;
+    bottom: -50%;
 }
+
+.bubble:nth-child(3) {
+    animation-delay: 1s;
+    left: 65%;
+    bottom: -50%;
+}
+
+.bubble:nth-child(4) {
+    animation-delay: 1.7s;
+    left: 10%;
+    bottom: -50%;
+}
+
+.bubble:nth-child(5) {
+    animation-delay: 3s;
+    left: 60%;
+    bottom: -50%;
+}
+
+.bubble:nth-child(6) {
+    animation-delay: 4s;
+    left: 20%;
+    bottom: -50%;
+}
+
+.bubble:nth-child(7) {
+    animation-delay: 5s;
+    left: 65%;
+    bottom: -50%;
+}
+
 .bubble:nth-child(8) {
-    animation-delay: 7s;
-    left: 10%;
-    bottom: 0%;
+    animation-delay: 6s;
+    left: 5%;
+    bottom: -50%;
 }
+
 .bubble:nth-child(9) {
-    animation-delay: 8s;
-    left: 70%;
-    bottom: 0%;
+    animation-delay: 7s;
+    left: 50%;
+    bottom: -50%;
 }
+
 .bubble:nth-child(10) {
-    animation-delay: 9s;
+    animation-delay: 8s;
     left: 10%;
-    bottom: 0%;
+    bottom: -50%;
 }
 
+@keyframes animatedEye {
+    0% {
+        transform: translate(0, 0);
+    }
 
+    30% {
+        transform: translate(0, 0);
+    }
 
+    40% {
+        transform: translate(20%, 10%);
+    }
+
+    50% {
+        transform: translate(-20%, 20%);
+    }
+
+    60% {
+        transform: translate(-20%, -20%);
+    }
+
+    70% {
+        transform: translate(20%, -20%);
+    }
+
+    80% {
+        transform: translate(20%, 20%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Animated Eye */
+.eye {
+    position: absolute;
+    width: 40%;
+    aspect-ratio: 1/1;
+    /* Set the aspect ratio to 1:1 for a perfect square */
+    rotate: 45deg;
+    background-color: var(--background-200);
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: 3px solid var(--text-500);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 0;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.3s ease-in-out, background-color 0.2s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    margin-bottom: 40%;
+}
+
+.eyeball {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: var(--background-200);
+    border: 3px solid var(--text-500);
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s ease-in-out;
+    animation: animatedEye 5s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pupil {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: var(--accent-950);
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+@keyframes animatedLock {
+    0% {
+        transform: translate(0, -80%);
+    }
+    50% {
+        transform: translate(85%, -80%);
+    }
+    100% {
+        transform: translate(0, -80%);
+    }
+
+}
+
+.top-lock {
+    width: 22%;
+    aspect-ratio: 1.5/1;
+    border-radius: 150px 150px 0 0;
+    border: 20px solid var(--text-100);
+    border-bottom: 0px;
+    position: absolute;
+    transform: translateY(-80%);
+    opacity: 1;
+    z-index: 0;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.2s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.bottom-lock {
+    width: 25%;
+    aspect-ratio: 1/1.05;
+    /* Set the aspect ratio to 1:1 for a perfect square */
+    background-color: var(--text-100);
+    border: 10px solid var(--text-100);;
+    position: absolute;
+    transform: translateY(+20%);
+    opacity: 1;
+    z-index: 0;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.2s ease-in-out;
+}
 
 
 
@@ -685,7 +876,10 @@ body {
 
 .grid .item:nth-child(4) {
     grid-area: med2;
-    background: var(--accent-300);
+    background: var(--background-900);
+    color: var(--text-500);
+    cursor: pointer;
+    text-shadow: none;
 }
 
 .grid .item:nth-child(5),
@@ -706,6 +900,17 @@ body {
     cursor: pointer;
 }
 
+@keyframes pressIn {
+    0% {
+        box-shadow: var(--shadow);
+    }
+
+    100% {
+        box-shadow: var(--inset-shadow);
+    }
+}
+
+.grid .item:nth-child(4):hover,
 .grid .item:nth-child(5):hover,
 .grid .item:nth-child(6):hover,
 .grid .item:nth-child(7):hover,
@@ -718,11 +923,31 @@ body {
 .grid .item:nth-child(14):hover,
 .grid .item:nth-child(15):hover,
 .grid .item:nth-child(16):hover {
+
     /* Add your hover effect styles here */
     .square {
-        border-color: var(--text-200);
+        border-color: var(--text-300);
+        border-radius: 25%;
     }
+
     .bubble {
-        border-color: var(--text-200);
+        /*border-color: var(--text-200); */
+        /* remove background color */
+        border-color: var(--text-300);
+        background-color: var(--background-100);
+    }
+
+    .eye {
+        border-color: var(--text-300);
+        background-color: var(--background-100);
+    }
+
+    .top-lock {
+        border-color: var(--text-800);
+        animation: animatedLock 1.8s ease-in-out;
+    }
+    .bottom-lock {
+        border-color: var(--text-800);
+        background-color: var(--text-800);
     }
 }

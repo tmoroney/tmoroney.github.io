@@ -43,6 +43,33 @@ function switchTheme() {
     }
 }
 
+const chars1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+let interval = null;
+
+document.querySelector('h1[data-value="Encryption"]').onmouseover = event => {
+    let iteration = 0;
+    clearInterval(interval);
+    interval = setInterval(() => {
+        event.target.innerText = event.target.innerText
+            .split("")
+            .map((letter, index) => {
+                if (index < iteration) {
+                    return event.target.dataset.value[index];
+                }
+
+                return chars1[Math.floor(Math.random() * 26)]
+            })
+            .join("");
+
+        if (iteration >= event.target.dataset.value.length) {
+            clearInterval(interval);
+        }
+
+        iteration += 1 / 3;
+    }, 30);
+};
+
 // Get the indicator
 const indicator = document.querySelector('.indicator');
 const themeSwitcher = document.querySelector('#theme-switcher');
