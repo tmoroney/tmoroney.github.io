@@ -506,7 +506,7 @@ body {
 
     .bento-container .secondary {
         font-size: 1.4rem;
-        margin-top: -1.2rem;
+        margin-top: -1rem;
     }
 }
 
@@ -520,8 +520,8 @@ body {
     }
 
     .bento-container .secondary {
-        font-size: 1.4rem;
-        margin-top: -1.2rem;
+        font-size: 1.6rem;
+        margin-top: -1rem;
     }
 }
 
@@ -766,7 +766,7 @@ body {
 /* Animated Eye */
 .eye {
     position: absolute;
-    width: 40%;
+    width: 55%;
     aspect-ratio: 1/1;
     /* Set the aspect ratio to 1:1 for a perfect square */
     rotate: 45deg;
@@ -781,7 +781,14 @@ body {
     justify-content: center;
     align-items: center;
     transition: border-color 0.3s ease-in-out, background-color 0.2s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
-    margin-bottom: 40%;
+    margin-bottom: 50%
+}
+
+@media screen and (min-width: 750px) {
+    .eye {
+        margin-bottom: 40%;
+        width: 40%;
+    }
 }
 
 .eyeball {
