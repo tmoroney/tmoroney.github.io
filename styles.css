@@ -386,7 +386,7 @@ body {
 .hero {
     position: absolute;
     border-radius: var(--curved-border);
-    border: 10px solid var(--background-200);
+    border: 10px solid var(--background-300);
     width: 100%;
     height: 100%;
     opacity: 0.5;
@@ -570,62 +570,91 @@ body {
     animation-delay: 14s;
 }
 
-/* bouncing box animation */
-@keyframes boxAnimation {
+@keyframes moveUp {
     0% {
-        transform: translateY(-100%);
+        opacity: 0;
+        bottom:-15%;
     }
-    50% {
-        transform: translateY(0)
-    }
-    80% {
-        transform: translateY(0)
-    }
-    90% {
-        transform: translateY(-10)
+    10% {
+        opacity: 0.5;
     }
     100% {
-        transform: translateY(100%);
+        opacity: 0.2;
+        bottom:140%;
     }
 }
 
-.square-box {
-    width: 100%;
-    height: 100%;
+/* bubbles with names that start at a random position at the botton container and then move up in a random pattern */
+.bubble {
     position: absolute;
-    animation: boxAnimation 5s ease-in-out infinite;
-}
-
-.square-box:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--background-200);
+    border: 3px solid var(--text-500);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    animation: moveUp 9s ease-out infinite;
     animation-delay: 0s;
-}
-.square-box:nth-child(2) {
-    animation-delay: 2s;
-}
-
-.inside-box {
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    background-color: var(--background-100);
-    width: 100%;
+    z-index: 0;
+    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: var(--curved-border);
-    background-color: var(--background-200);
-    border: 3px solid var(--text-500);
-    transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    color: var(--text-500);
-    font-size: 0.8rem;
-    font-weight: 800;
-    padding: 5%;
+    transition: border-color 0.3s ease-in-out;
 }
-@media screen and (min-width: 750px) {
-    .inside-box {
-        border-radius: var(--curved-border);
-    }
+
+.bubble:nth-child(1) {
+    animation-delay: 0s;
+    left: 5%;
+    bottom: 0%;
 }
+.bubble:nth-child(2) {
+    animation-delay: 1s;
+    left: 50%;
+    bottom: 0%;
+}
+.bubble:nth-child(3) {
+    animation-delay: 2s;
+    left: 5%;
+    bottom: 0%;
+}
+.bubble:nth-child(4) {
+    animation-delay: 3s;
+    left: 70%;
+    bottom: 0%;
+}
+.bubble:nth-child(5) {
+    animation-delay: 4s;
+    left: 10%;
+    bottom: 0%;
+}
+.bubble:nth-child(6) {
+    animation-delay: 5s;
+    left: 60%;
+    bottom: 0%;
+}
+.bubble:nth-child(7) {
+    animation-delay: 6s;
+    left: 40%;
+    bottom: 0%;
+}
+.bubble:nth-child(8) {
+    animation-delay: 7s;
+    left: 10%;
+    bottom: 0%;
+}
+.bubble:nth-child(9) {
+    animation-delay: 8s;
+    left: 70%;
+    bottom: 0%;
+}
+.bubble:nth-child(10) {
+    animation-delay: 9s;
+    left: 10%;
+    bottom: 0%;
+}
+
+
 
 
 
@@ -673,6 +702,8 @@ body {
 .grid .item:nth-child(16) {
     /* background: var(--background-500); */
     background: var(--background-100);
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .grid .item:nth-child(5):hover,
@@ -689,6 +720,9 @@ body {
 .grid .item:nth-child(16):hover {
     /* Add your hover effect styles here */
     .square {
+        border-color: var(--text-200);
+    }
+    .bubble {
         border-color: var(--text-200);
     }
 }
