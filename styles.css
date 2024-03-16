@@ -571,71 +571,60 @@ body {
 }
 
 /* bouncing box animation */
-@keyframes bounceAnimation1 {
+@keyframes boxAnimation {
     0% {
-        transform: translate(-200%, -200%);
-    }
-    25% {
-        transform: translate(-200%, +200%);
+        transform: translateY(-100%);
     }
     50% {
-        transform: translate(+200%, +200%);
+        transform: translateY(0)
     }
-    75% {
-        transform: translate(+200%, -200%);
+    80% {
+        transform: translateY(0)
     }
-    100% {
-        transform: translate(-200%, -200%);
-    }
-}
-@keyframes bounceAnimation2 {
-    0% {
-        transform: translate(+200%, +200%);
-    }
-    25% {
-        transform: translate(+200%, -200%);
-    }
-    50% {
-        transform: translate(-200%, -200%);
-    }
-    75% {
-        transform: translate(-200%, +200%);
+    90% {
+        transform: translateY(-10)
     }
     100% {
-        transform: translate(+200%, +200%);
+        transform: translateY(100%);
     }
 }
 
 .square-box {
-    width: 8vw;
-    aspect-ratio: 1/1; /* Set the aspect ratio to 1:1 for a perfect square */
-    border-radius: 2vw;
-    background-color: var(--background-200);
-    border: 3px solid var(--text-500);
+    width: 100%;
+    height: 100%;
     position: absolute;
-    z-index: 0;
-    transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    animation: bounceAnimation1 4s ease-in-out infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-    color: var(--text-500);
-    font-size: 0.8rem;
-    font-weight: 500;
+    animation: boxAnimation 5s ease-in-out infinite;
 }
-@media screen and (min-width: 750px) {
-    .square-box {
-        width: 2vw;
-        border-radius: 0.5vw;
-    }
-}
+
 .square-box:nth-child(1) {
     animation-delay: 0s;
 }
 .square-box:nth-child(2) {
-    animation: bounceAnimation2 4s ease-in-out infinite;
-    animation-delay: 0s;
+    animation-delay: 2s;
+}
+
+.inside-box {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    background-color: var(--background-100);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--curved-border);
+    background-color: var(--background-200);
+    border: 3px solid var(--text-500);
+    transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    color: var(--text-500);
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 5%;
+}
+@media screen and (min-width: 750px) {
+    .inside-box {
+        border-radius: var(--curved-border);
+    }
 }
 
 
