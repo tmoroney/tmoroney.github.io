@@ -165,11 +165,11 @@ also inspired by: https://www.littlewebsite.co/
         grid-template-rows: 50vh 30vh repeat(7, minmax(20vh, 1fr));
         grid-template-areas:
             "hero   hero"
+            "small1 small2"
             "big1   big1"
             "big2   big2"
             "med1   med1"
             "med2   med2"
-            "small1 small2"
             "small3 small4"
             "small5 small6"
             "small7 small8"
