@@ -78,6 +78,8 @@ also inspired by: https://www.littlewebsite.co/
     --text-shadow: 0px 0px 40px rgba(0, 0, 0, 1);
     --inset-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
     --nav-background: rgba(110, 68, 43, 0.8);
+    --workday-logo: url("Workday_Logo.png");
+    --workday-logo-width: 82%;
 }
 
 :root[data-theme="light"] {
@@ -144,6 +146,8 @@ also inspired by: https://www.littlewebsite.co/
     --text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     --inset-shadow: inset 5px 0px 0px rgba(0, 0, 0, 0.1);
     --nav-background: rgba(212, 170, 145, 0.8);
+    --workday-logo: url("Workday_Logo_Dark.png");
+    --workday-logo-width: 77%;
 }
 
 :root {
@@ -274,6 +278,8 @@ body {
 
 #theme-switcher {
     opacity: 0;
+    /* make text not able to be selected */
+    user-select: none;
 }
 
 @media screen and (min-width: 750px) {
@@ -384,8 +390,8 @@ body {
 
 .hero {
     position: absolute;
-    border-radius: var(--curved-border);
-    border: 10px solid var(--background-300);
+    /* border-radius: var(--curved-border);
+    border: 10px solid var(--background-300); */
     width: 100%;
     height: 100%;
     opacity: 0.5;
@@ -397,7 +403,7 @@ body {
     /* Add an inset shadow */
     box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
     /* Add transition on hover */
-    transition: border 0.8s, background-position 0.8s, opacity 0.8s;
+    transition: border 0.8s, background-position 0.8s, opacity 0.8s, background-size 0.8s;
 }
 
 .hero:hover {
@@ -492,7 +498,7 @@ body {
 
 .bento-container .secondary {
     font-size: 1.2rem;
-    margin-top: -1rem;
+    margin-top: -0.8rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -781,7 +787,7 @@ body {
     justify-content: center;
     align-items: center;
     transition: border-color 0.3s ease-in-out, background-color 0.2s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
-    margin-bottom: 50%
+    margin-bottom: 45%
 }
 
 @media screen and (min-width: 750px) {
@@ -832,8 +838,8 @@ body {
 .top-lock {
     width: 22%;
     aspect-ratio: 1.5/1;
-    border-radius: 150px 150px 0 0;
-    border: 20px solid var(--text-100);
+    border-radius: 150px 150px 10% 10%;
+    border: 10px solid var(--background-100);
     border-bottom: 0px;
     position: absolute;
     transform: translateY(-80%);
@@ -842,12 +848,20 @@ body {
     transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.2s ease-in-out, transform 0.3s ease-in-out;
 }
 
+@media screen and (min-width: 750px) {
+    .top-lock {
+        border: 20px solid var(--background-100);
+        border-bottom: 0px;
+    }
+}
+
 .bottom-lock {
-    width: 25%;
-    aspect-ratio: 1/1.05;
+    width: 27%;
+    aspect-ratio: 1/1.01;
     /* Set the aspect ratio to 1:1 for a perfect square */
-    background-color: var(--text-100);
-    border: 10px solid var(--text-100);;
+    background-color: var(--background-100);
+    border: 10px solid var(--background-100);
+    border-radius: 10%;
     position: absolute;
     transform: translateY(+20%);
     opacity: 1;
@@ -889,10 +903,16 @@ body {
     text-shadow: none;
 }
 
+.grid .item:nth-child(8) {
+    grid-area: small4;
+    background: var(--primary-950);
+    color: var(--text-500);
+    cursor: pointer;
+}
+
 .grid .item:nth-child(5),
 .grid .item:nth-child(6),
 .grid .item:nth-child(7),
-.grid .item:nth-child(8),
 .grid .item:nth-child(9),
 .grid .item:nth-child(10),
 .grid .item:nth-child(11),

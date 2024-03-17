@@ -37,17 +37,45 @@ function switchTheme() {
     if (currentTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'light');
         themeSwitcher.textContent = '🌙'; // Show a moon when the theme is light
+        workdayLogo.src = "Workday_Logo_Dark.png";
+        workdayLogo.style.width = "82%";
+
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         themeSwitcher.textContent = '☀️'; // Show a sun when the theme is dark
+        workdayLogo.src = "Workday_Logo.png";
+        workdayLogo.style.width = "87%";
     }
 }
 
 const chars1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-let interval = null;
-
 document.querySelector('h1[data-value="Encryption"]').onmouseover = event => {
+    let interval = null;
+    let iteration = 0;
+    clearInterval(interval);
+    interval = setInterval(() => {
+        event.target.innerText = event.target.innerText
+            .split("")
+            .map((letter, index) => {
+                if (index < iteration) {
+                    return event.target.dataset.value[index];
+                }
+
+                return chars1[Math.floor(Math.random() * 26)]
+            })
+            .join("");
+
+        if (iteration >= event.target.dataset.value.length) {
+            clearInterval(interval);
+        }
+
+        iteration += 1 / 3;
+    }, 30);
+};
+
+document.querySelector('h1[data-value="Projects"]').onmouseover = event => {
+    let interval = null;
     let iteration = 0;
     clearInterval(interval);
     interval = setInterval(() => {
@@ -73,6 +101,7 @@ document.querySelector('h1[data-value="Encryption"]').onmouseover = event => {
 // Get the indicator
 const indicator = document.querySelector('.indicator');
 const themeSwitcher = document.querySelector('#theme-switcher');
+const workdayLogo = document.querySelector('#workday-logo');
 
 // Listen for the scroll event
 window.addEventListener('scroll', setIndicator);
