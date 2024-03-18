@@ -158,6 +158,7 @@ also inspired by: https://www.littlewebsite.co/
     --radialPrimaryAccent: radial-gradient(#fcbf27, #4c5828);
     --radialSecondaryAccent: radial-gradient(#ffe100, #4c5828);
     --curved-border: 18px;
+    --image-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 @supports (display: grid) {
@@ -202,7 +203,7 @@ also inspired by: https://www.littlewebsite.co/
         .grid {
             padding: 1.5vw;
             padding-top: 110px;
-            grid-gap: 1.5vw;
+            grid-gap: 1vw;
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(4, 30vh);
             grid-template-areas:
@@ -367,25 +368,100 @@ body {
     margin: 0 0px;
 }
 
+/* Project list */
 .project-list {
-    font-family: 'Matolha', fallback;
+    margin: 2vh;
+}
+
+.project-list p {
+    /* font-family: 'Matolha', fallback; */
+    font-size: calc(1rem + 3vw);
+    margin-bottom: 1.5vh;
+    font-weight: 900;
+    /* color: var(--text-800); */
 }
 
 .project-list ul {
     list-style: none;
-    font-size: 150%;
+    font-size: 1rem;
+    font-weight: 500;
     pointer-events: all;
 }
 
 .project-list ul li {
-    padding: 5px;
+    padding: 15px;
+    margin: 2.2vw;
     transition: background-color 0.3s ease;
-    /* change cursor to pointer */
+    border-radius: 30px;
     cursor: pointer;
+    background: var(--background-100);
+    border-radius: var(--curved-border);
+    border: 3px solid var(--text-800);
+    color: var(--text-900);
+    box-shadow: var(--image-shadow);
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+.project-list ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-list ul h1 {
+    font-size: 1rem;
+    margin: auto;
+}
+
+@media screen and (min-width: 750px) {
+    .project-list ul {
+        padding-bottom: 0.5vh;
+    }
+    .project-list p {
+        font-size: 1.5rem;
+        margin-bottom: 1.7vh;
+    }
+    .project-list ul h1 {
+        font-size: 1.5rem;
+    }
+    .project-list ul li {
+        padding: 1vw;
+        margin: 1.2vh;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .project-list p {
+        font-size: calc(1.2rem + 2vh);
+        margin-bottom: 1.7vh;
+    }
+    .project-list ul h1 {
+        font-size: calc(1rem + 0.5vh);
+    }
+    .project-list ul li {
+        padding: 1vw;
+        margin: 1.2vh;
+    }
+}
+
+.project-list ul li img {
+    width: 40%;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+    margin-left: 1vw;
+    box-shadow: var(--image-shadow)
+}
+
 
 .project-list ul li:hover {
     background-color: var(--background-200);
+    border-color: var(--text-900);
 }
 
 .hero {
@@ -836,8 +912,8 @@ body {
 }
 
 .top-lock {
-    width: 22%;
-    aspect-ratio: 1.5/1;
+    height: 30%;
+    aspect-ratio: 1.3/1;
     border-radius: 150px 150px 10% 10%;
     border: 10px solid var(--background-100);
     border-bottom: 0px;
@@ -856,8 +932,8 @@ body {
 }
 
 .bottom-lock {
-    width: 27%;
-    aspect-ratio: 1/1.01;
+    height: 50%;
+    aspect-ratio: 1.1/1;
     /* Set the aspect ratio to 1:1 for a perfect square */
     background-color: var(--background-100);
     border: 10px solid var(--background-100);
@@ -869,6 +945,28 @@ body {
     transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.2s ease-in-out;
 }
 
+#workday-logo {
+    border: 4px solid var(--background-300);
+    background: var(--background-200);
+    padding: 26px;
+    border-radius: 30px;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, padding 0.3s ease-in-out, border-radius 0.3s ease-in-out, border-color 0.3s ease-in-out, background 0.3s ease-in-out, border-width 0.2s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0.3vw;
+}
+    
+#channelsight-logo {
+    width: 90%;
+    border: 4px solid var(--background-300);
+    background: var(--background-200);
+    padding: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 30px;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, padding 0.3s ease-in-out, border-radius 0.3s ease-in-out, border-color 0.3s ease-in-out, background 0.3s ease-in-out, border-width 0.2s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0.3vw;
+}
 
 
 /*
@@ -886,12 +984,12 @@ body {
 
 .grid .item:nth-child(2) {
     grid-area: big1;
-    background: var(--primary-500);
+    background: var(--text-500);
 }
 
 .grid .item:nth-child(3) {
     grid-area: med1;
-    background-image: url("https://ik.imgkit.net/3vlqs5axxjf/MM-TP/ik-seo/https://cdn.travelpulse.com/images/3faaedf4-a957-df11-b491-006073e71405/a790e5b2-a42c-4f77-8f31-9683b5647778/source/Image-PHOTO-Terraced-rice-field-landscape-near-Sap.jpg?tr=w-1400%2Ch-650%2Cfo-auto");
+    background: var(--background-100);
 
 }
 
@@ -905,15 +1003,38 @@ body {
 
 .grid .item:nth-child(8) {
     grid-area: small4;
-    background: var(--primary-950);
+    background: var(--background-100);
     color: var(--text-500);
     cursor: pointer;
+    transition: color 0.25s ease-in-out;
+}
+
+.grid .item:nth-child(9) {
+    grid-area: small5;
+    background: var(--background-100);
+    color: var(--text-500);
+    cursor: pointer;
+    transition: color 0.25s ease-in-out;
+}
+
+.grid .item:nth-child(8):hover,
+.grid .item:nth-child(9):hover {
+    color: var(--text-900);
+    #workday-logo {
+        border-color: var(--background-400);
+        background: var(--background-100);
+    }
+
+    #channelsight-logo {
+        border-color: var(--background-400);
+        background: var(--background-100);
+    }
+
 }
 
 .grid .item:nth-child(5),
 .grid .item:nth-child(6),
 .grid .item:nth-child(7),
-.grid .item:nth-child(9),
 .grid .item:nth-child(10),
 .grid .item:nth-child(11),
 .grid .item:nth-child(12),
@@ -927,22 +1048,10 @@ body {
     cursor: pointer;
 }
 
-@keyframes pressIn {
-    0% {
-        box-shadow: var(--shadow);
-    }
-
-    100% {
-        box-shadow: var(--inset-shadow);
-    }
-}
-
 .grid .item:nth-child(4):hover,
 .grid .item:nth-child(5):hover,
 .grid .item:nth-child(6):hover,
 .grid .item:nth-child(7):hover,
-.grid .item:nth-child(8):hover,
-.grid .item:nth-child(9):hover,
 .grid .item:nth-child(10):hover,
 .grid .item:nth-child(11):hover,
 .grid .item:nth-child(12):hover,

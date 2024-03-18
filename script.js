@@ -37,14 +37,18 @@ function switchTheme() {
     if (currentTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'light');
         themeSwitcher.textContent = '🌙'; // Show a moon when the theme is light
-        workdayLogo.src = "Workday_Logo_Dark.png";
-        workdayLogo.style.width = "82%";
+        channelsightLogo.src = "ChannelSight_Logo_Dark.png";
+        workdayLogo.src = "Workday_Logo.png";
+        workdayLogo.style.width = "85%";
+        workdayLogo.style.padding = "22px";
 
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         themeSwitcher.textContent = '☀️'; // Show a sun when the theme is dark
-        workdayLogo.src = "Workday_Logo.png";
-        workdayLogo.style.width = "87%";
+        channelsightLogo.src = "ChannelSight_Logo_Light.png";
+        workdayLogo.src = "Workday_Logo_Dark.png";
+        workdayLogo.style.width = "82%";
+        workdayLogo.style.padding = "26px";
     }
 }
 
@@ -102,6 +106,7 @@ document.querySelector('h1[data-value="Projects"]').onmouseover = event => {
 const indicator = document.querySelector('.indicator');
 const themeSwitcher = document.querySelector('#theme-switcher');
 const workdayLogo = document.querySelector('#workday-logo');
+const channelsightLogo = document.querySelector('#channelsight-logo');
 
 // Listen for the scroll event
 window.addEventListener('scroll', setIndicator);
