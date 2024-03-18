@@ -209,7 +209,7 @@ also inspired by: https://www.littlewebsite.co/
             grid-template-areas:
                 "hero   hero   hero   small1 small2   small3"
                 "hero   hero   hero   big1   big1     small4"
-                "small6 small7 small8 big1   big1     small5"
+                "small6 small5 small8 big1   big1     small7"
                 "small9 med1   med1   small10 med2     med2"
         }
     }
@@ -578,7 +578,7 @@ body {
 }
 
 .bento-container .secondary {
-    font-size: calc(0.5rem + 1vw);
+    font-size: calc(0.8rem + 1vw);
     margin-top: -0.8rem;
 }
 
@@ -1094,7 +1094,7 @@ body {
 }
     
 #channelsight-logo {
-    width: 22vh;
+    width: 35vw;
     border: 4px solid var(--background-300);
     background: var(--background-200);
     padding: 1.6vh;
@@ -1105,6 +1105,17 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     margin-top: 6%;
     margin-bottom: 2%;
+}
+
+@media screen and (min-width: 750px) {
+    #channelsight-logo {
+        width: 13vw;
+    }
+}
+@media screen and (min-width: 1400px) {
+    #channelsight-logo {
+        width: 11.5vw;
+    }
 }
 
 
