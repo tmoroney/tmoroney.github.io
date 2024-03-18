@@ -44,7 +44,7 @@ function switchTheme() {
 
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
-        themeSwitcher.textContent = '☀️'; // Show a sun when the theme is dark
+        themeSwitcher.textContent = '🌞'; // Show a sun when the theme is dark
         channelsightLogo.src = "ChannelSight_Logo_Light.png";
         workdayLogo.src = "Workday_Logo_Dark.png";
         workdayLogo.style.width = "82%";
@@ -120,5 +120,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set the initial state of the theme switcher
     document.documentElement.setAttribute('data-theme', 'dark'); // or 'dark'
     const currentTheme = document.documentElement.getAttribute('data-theme');
-    themeSwitcher.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+    themeSwitcher.textContent = currentTheme === 'dark' ? '🌞' : '🌙';
 });

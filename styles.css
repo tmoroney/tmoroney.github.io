@@ -165,22 +165,21 @@ also inspired by: https://www.littlewebsite.co/
     .grid {
         display: grid;
         grid-gap: 3vw;
-        min-height: 140vh;
+        min-height: 130vh;
         padding: 4vw;
         padding-top: 80px;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 50vh 30vh repeat(7, minmax(20vh, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(250px, auto));
         grid-template-areas:
             "hero   hero"
             "small1 small2"
             "big1   big1"
-            "big2   big2"
-            "med1   med1"
             "med2   med2"
             "small3 small4"
             "small5 small6"
             "small7 small8"
-            "small9 small10";
+            "small9 small10"
+            "med1   med1";
     }
 
     @media screen and (min-width: 750px) {
@@ -203,7 +202,7 @@ also inspired by: https://www.littlewebsite.co/
         .grid {
             padding: 1.5vw;
             padding-top: 110px;
-            grid-gap: 1vw;
+            grid-gap: 1.5vw;
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(4, 30vh);
             grid-template-areas:
@@ -281,6 +280,7 @@ body {
     opacity: 0;
     /* make text not able to be selected */
     user-select: none;
+    font-size: 1.4rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -569,11 +569,11 @@ body {
 }
 
 .bento-container .primary-small {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .bento-container .secondary {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-top: -0.8rem;
 }
 
@@ -726,8 +726,8 @@ body {
 /* bubbles with names that start at a random position at the botton container and then move up in a random pattern */
 .bubble {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 12vw;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     background-color: var(--background-200);
     border: 3px solid var(--text-500);
@@ -745,7 +745,6 @@ body {
 @media screen and (min-width: 750px) {
     .bubble {
         width: 4vw;
-        height: 4vw;
     }
 }
 
@@ -956,7 +955,7 @@ body {
 }
     
 #channelsight-logo {
-    width: 90%;
+    width: 80%;
     border: 4px solid var(--background-300);
     background: var(--background-200);
     padding: 20px;
