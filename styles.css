@@ -165,11 +165,10 @@ also inspired by: https://www.littlewebsite.co/
     .grid {
         display: grid;
         grid-gap: 3vw;
-        min-height: 130vh;
         padding: 4vw;
         padding-top: 70px;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(auto-fit, minmax(250px, auto));
+        grid-template-rows: repeat(auto-fit, minmax(10px, 50px));
         grid-template-areas:
             "hero   hero"
             "small1 small2"
@@ -191,11 +190,11 @@ also inspired by: https://www.littlewebsite.co/
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(5, 25vh);
             grid-template-areas:
-                "hero   hero   hero   med1   med1"
-                "hero   hero   hero   med2   med2"
-                "big1   big1   big1   big2   big2"
-                "small1 small2 small3 small4 small5"
-                "small6 small7 small8 small9 small10";
+                "hero   hero   hero   small1 small2"
+                "hero   hero   hero   small4 small3"
+                "med2   med2 big1   big1   small5"
+                "small7 small8   big1   big1   small6"
+                "small9 small10 med1   med1   med1";
         }
     }
 
@@ -369,102 +368,6 @@ body {
     margin: 0 0px;
 }
 
-/* Project list */
-.project-list {
-    margin: 2vh;
-}
-
-.project-list p {
-    /* font-family: 'Matolha', fallback; */
-    font-size: calc(1rem + 3vw);
-    margin-bottom: 1.5vh;
-    font-weight: 900;
-    /* color: var(--text-800); */
-}
-
-.project-list ul {
-    list-style: none;
-    font-size: 1rem;
-    font-weight: 500;
-    pointer-events: all;
-}
-
-.project-list ul li {
-    padding: 15px;
-    margin: 2.2vw;
-    transition: background-color 0.3s ease;
-    border-radius: 30px;
-    cursor: pointer;
-    background: var(--background-100);
-    border-radius: var(--curved-border);
-    border: 3px solid var(--text-800);
-    color: var(--text-900);
-    box-shadow: var(--image-shadow);
-    /* flex */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.project-list ul li a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.project-list ul h1 {
-    font-size: 1rem;
-    margin: auto;
-}
-
-@media screen and (min-width: 750px) {
-    .project-list ul {
-        padding-bottom: 0.5vh;
-    }
-    .project-list p {
-        font-size: 1.5rem;
-        margin-bottom: 1.7vh;
-    }
-    .project-list ul h1 {
-        font-size: 1.5rem;
-    }
-    .project-list ul li {
-        padding: 1vw;
-        margin: 1.2vh;
-    }
-}
-@media screen and (min-width: 1400px) {
-    .project-list p {
-        font-size: calc(1.2rem + 2vh);
-        margin-bottom: 1.7vh;
-    }
-    .project-list ul h1 {
-        font-size: calc(1rem + 0.5vh);
-    }
-    .project-list ul li {
-        padding: 1vw;
-        margin: 1.2vh;
-    }
-}
-
-.project-list ul li img {
-    width: 40%;
-    border-radius: 10px;
-    transition: border-color 0.3s ease;
-    margin-left: 1vw;
-    box-shadow: var(--image-shadow)
-}
-
-
-.project-list ul li:hover {
-    background-color: var(--background-200);
-    border-color: var(--text-900);
-}
-
 .hero {
     position: absolute;
     /* border-radius: var(--curved-border);
@@ -489,14 +392,17 @@ body {
     border-color: var(--background-950);
 }
 
-.fa {
+.social-icon {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 0px;
     margin-bottom: 15px;
-    font-size: 30px;
     width: 80px;
+    font-size: 30px;
     text-align: center;
+}
+
+.fa {
     text-decoration: none;
     color: var(--text-950);
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
@@ -537,24 +443,6 @@ body {
     .header {
         font-size: 3.5rem;
     }
-}
-
-.card-letters {
-    --x: 0px;
-    --y: 0px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    color: var(--text-300);
-    font-size: 2rem;
-    font-weight: 500;
-    word-wrap: break-word;
-    opacity: 0.2;
-    transition: opacity 400ms;
-    scale: 1.03;
-    font-family: 'MarginDemo', fallback;
 }
 
 /* Bento container */
@@ -914,9 +802,11 @@ body {
     0% {
         transform: translate(0, -80%);
     }
+
     50% {
         transform: translate(85%, -80%);
     }
+
     100% {
         transform: translate(0, -80%);
     }
@@ -1004,77 +894,92 @@ body {
     left: 60%;
     rotate: 10deg;
 }
+
 /* No delay for the first bubble */
 .cube:nth-child(2) {
     animation-delay: 0s;
     left: 50%;
     rotate: 10deg;
 }
+
 .cube:nth-child(3) {
     animation-delay: 0.4s;
     left: 70%;
     rotate: 10deg;
 }
+
 .cube:nth-child(4) {
     animation-delay: 0.8s;
     left: 10%;
     rotate: 30deg;
 }
+
 .cube:nth-child(5) {
     animation-delay: 1.2s;
     left: 75%;
     rotate: -20deg;
 }
+
 .cube:nth-child(6) {
     animation-delay: 1.6s;
     left: 10%;
     rotate: -40deg;
 }
+
 .cube:nth-child(7) {
     animation-delay: 2s;
     left: 80%;
     rotate: 30deg;
 }
+
 .cube:nth-child(8) {
     animation-delay: 2.4s;
     left: 15%;
     rotate: -20deg;
 }
+
 .cube:nth-child(9) {
     animation-delay: 2.8s;
     left: 40%;
     rotate: 30deg;
 }
+
 .cube:nth-child(10) {
     animation-delay: 3.2s;
     left: 80%;
     rotate: 10deg;
 }
+
 .cube:nth-child(11) {
     animation-delay: 3.6s;
     left: 20%;
     rotate: 45deg;
 }
+
 .cube:nth-child(12) {
     animation-delay: 4s;
     left: 60%;
     rotate: -20deg;
 }
+
 .cube:nth-child(13) {
     animation-delay: 4.4s;
     left: 15%;
     rotate: 30deg;
 }
+
 .cube:nth-child(14) {
     animation-delay: 4.8s;
     left: 70%;
     rotate: 10deg;
 }
+
 .cube:nth-child(15) {
     animation-delay: 5.2s;
     left: 15%;
     rotate: 30deg;
 }
+
 .cube:nth-child(16) {
     animation-delay: 5.6s;
     left: 60%;
@@ -1092,7 +997,7 @@ body {
     margin-top: 0px;
     margin-bottom: 2%;
 }
-    
+
 #channelsight-logo {
     width: 22vh;
     border: 4px solid var(--background-300);
@@ -1112,6 +1017,7 @@ body {
         width: 13vw;
     }
 }
+
 @media screen and (min-width: 1400px) {
     #channelsight-logo {
         width: 11.5vw;
@@ -1172,7 +1078,8 @@ body {
 
 .grid .item:nth-child(9):hover,
 .grid .item:nth-child(10):hover {
-    color:var(--text-500);
+    color: var(--text-500);
+
     #workday-logo {
         border-color: var(--background-400);
         background: var(--background-100);
@@ -1188,11 +1095,13 @@ body {
 .grid .item:nth-child(7) .bento-container {
     margin-bottom: 1.5vh;
 }
+
 @media screen and (min-width: 750px) {
     .grid .item:nth-child(7) .bento-container {
         margin-bottom: 5vh;
     }
 }
+
 @media screen and (min-width: 1400px) {
     .grid .item:nth-child(7) .bento-container {
         margin-bottom: 4vh;
@@ -1258,6 +1167,7 @@ body {
         border-color: var(--background-100);
         animation: animatedLock 1.8s ease-in-out;
     }
+
     .bottom-lock {
         border-color: var(--background-100);
         background-color: var(--background-100);
@@ -1265,16 +1175,22 @@ body {
 }
 
 .overlay {
-    position: fixed; /* Fixed/sticky position */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0; 
+    position: fixed;
+    /* Fixed/sticky position */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
-    z-index: 70; /* Specify a stack order in case you're using a different order for other elements */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black background with opacity */
+    z-index: 70;
+    /* Specify a stack order in case you're using a different order for other elements */
     transition: opacity 0.2s ease-in-out;
     opacity: 0;
 }
@@ -1282,27 +1198,181 @@ body {
 /* The Modal (background) */
 .modal-content {
     background-color: var(--background-300);
-    margin: 1.5% auto; /* 15% from the top and centered */
+    margin: 1.5% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 2px solid var(--text-600);
-    width: 80%; /* Could be more or less, depending on screen size */
-    z-index: 75; /* Sit on top of the overlay */
+    width: 70%;
+    /* Could be more or less, depending on screen size */
+    z-index: 75;
+    /* Sit on top of the overlay */
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
     overflow-y: scroll;
-    height: 93vh;
+    height: 92.5vh;
     text-align: center;
     transition: transform 0.2s ease-in-out;
-    transform: scale(0.7); /* Start scaled down */
+    transform: scale(0.7);
+    /* Start scaled down */
 }
 
 .close-modal {
     color: var(--text-600);
     float: right;
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
     cursor: pointer;
+    user-select: none;
 }
+
+/* Project list */
+.project-list {
+    margin: 2vh;
+}
+
+.project-list ul {
+    list-style: none;
+    font-size: 1rem;
+    font-weight: 500;
+    pointer-events: all;
+}
+
+.project-list ul li {
+    padding: 15px;
+    margin: 2.2vw;
+    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    background: var(--background-100);
+    border-radius: var(--curved-border);
+    border: 3px solid var(--text-800);
+    box-shadow: var(--image-shadow);
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-list ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.project-list h1 {
+    font-size: 2rem;
+}
+
+.project-list ul h2 {
+    font-size: 1rem;
+    margin-left: auto;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh;
+}
+
+.project-preview {
+    width: 40%;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+    box-shadow: var(--image-shadow);
+    margin-left: auto;
+    /* Add this line */
+}
+
+.project-list iframe {
+    width: 25.5vw;
+    height: 30vh;
+}
+
+.project-description {
+    margin-left: auto;
+}
+
+.project-description h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5vh;
+}
+
+.project-description p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.view-project-buttons {
+    margin-top: 2.5vh;
+    display: flex;
+    justify-content: center; /* optional: add some space between the buttons */
+}
+
+.project-button {
+    padding: 0.5vw;
+    padding-bottom: 0.65vw;
+    border-radius: 10px;
+    border: 2px solid var(--text-800);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 15vw;
+    display: inline-block;
+    margin: 0 0.5vw;
+}
+
+.project-button:hover {
+    background: var(--text-400);
+}
+
+.project-button-text {
+    color: var(--text-950);
+}
+
+
+@media screen and (min-width: 750px) {
+    .project-list h1 {
+        font-size: calc(1rem + 1vw);
+    }
+
+    .project-list ul {
+        padding-bottom: 0.5vh;
+    }
+
+    .project-list ul h2 {
+        font-size: calc(0.5rem + 0.6vw);
+    }
+
+    .project-list ul li {
+        padding: 1vw;
+        margin: 1.2vh;
+    }
+
+    .project-button {
+        width: 15vw;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .project-list ul h2 {
+        font-size: calc(1rem + 0.3vh);
+    }
+
+    .project-list ul li {
+        padding: 1vw;
+        margin: 1.2vh;
+    }
+    .project-button {
+        width: 200px;
+    }
+}
+
+
+
 
 /* custom scrollbar */
 .modal-content::-webkit-scrollbar {
@@ -1311,16 +1381,19 @@ body {
 }
 
 .modal-content::-webkit-scrollbar-track {
-    background: var(--background-300); /* Light color for the track */
+    background: var(--background-300);
+    /* Light color for the track */
     border-radius: 50px;
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-    background: var(--text-600); /* Dark color for the thumb */
+    background: var(--text-600);
+    /* Dark color for the thumb */
     border-radius: 50px;
     border: 15px solid var(--background-300);
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
-    background: var(--text-700); /* Darker color when hovering */
+    background: var(--text-700);
+    /* Darker color when hovering */
 }
