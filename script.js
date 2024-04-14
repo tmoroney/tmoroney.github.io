@@ -38,7 +38,7 @@ function switchTheme() {
         document.documentElement.setAttribute('data-theme', 'light');
         themeSwitcher.textContent = '🌙'; // Show a moon when the theme is light
         channelsightLogo.src = "https://assets-global.website-files.com/64248e7ed5f30d6effe57d5d/645bc6cf55c0bc11098dd759_Navbar%20logo_Word%20Mark%20Dark%20Grey%20Large%20140px%20x%20480px_Word%20Mark%20Dark%20Grey%20Large%20140px%20x%20480px.png";
-        workdayLogo.src = "Workday_Logo.png";
+        workdayLogo.src = "assets/Workday_Logo.png";
         workdayLogo.style.width = "85%";
         workdayLogo.style.padding = "22px";
 
@@ -46,7 +46,7 @@ function switchTheme() {
         document.documentElement.setAttribute('data-theme', 'dark');
         themeSwitcher.textContent = '🌞'; // Show a sun when the theme is dark
         channelsightLogo.src = "https://assets-global.website-files.com/64248e7ed5f30d6effe57d5d/64612b0b2bd50f8f9e51fba0_Navbar%20logo_Word%20Mark%20white%20Large%20140px%20x%20480px_Word%20Mark%20Dark%20Grey%20Large%20140px%20x%20480px.png";
-        workdayLogo.src = "Workday_Logo_Dark.png";
+        workdayLogo.src = "assets/Workday_Logo_Dark.png";
         workdayLogo.style.width = "82%";
         workdayLogo.style.padding = "26px";
     }
@@ -102,16 +102,48 @@ document.querySelector('h1[data-value="Projects"]').onmouseover = event => {
     }, 30);
 };
 
+function showModal(modalName) {
+    var modal = document.getElementById(modalName);
+    var modalContent = modal.querySelector('.modal-content');
+    modal.style.display = "block";
+    setTimeout(function() {
+        modal.style.opacity = "1";
+        modalContent.style.transform = "scale(1)";
+    }, 20);
+}
+
+function hideModal() {
+    var modal = document.querySelector('.overlay');
+    var modalContent = modal.querySelector('.modal-content');
+    modal.style.opacity = "0";
+    modalContent.style.transform = "scale(0.7)";
+    setTimeout(function() {
+        modal.style.display = "none";
+    }, 200);
+}
+
+
 // Get the indicator
 const indicator = document.querySelector('.indicator');
 const themeSwitcher = document.querySelector('#theme-switcher');
 const workdayLogo = document.querySelector('#workday-logo');
 const channelsightLogo = document.querySelector('#channelsight-logo');
+const closeModal = document.querySelector('.close-modal');
+const modalBackdrop = document.querySelector('.overlay');
 
 // Listen for the scroll event
 window.addEventListener('scroll', setIndicator);
-// Add an event listener to the theme switcher
 themeSwitcher.addEventListener('click', switchTheme);
+
+closeModal.addEventListener('click', hideModal);
+modalBackdrop.addEventListener('click', function(event) {
+    const modalContent = document.querySelector('.modal-content');
+    if (event.target === modalContent || modalContent.contains(event.target)) {
+        return;
+    }
+    hideModal();
+});
+
 
 // Set the indicator when the page loads
 setIndicator();

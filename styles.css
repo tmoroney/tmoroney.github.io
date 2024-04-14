@@ -321,7 +321,7 @@ body {
     top: 0;
     background: var(--nav-background);
     backdrop-filter: blur(30px);
-    z-index: 100;
+    z-index: 60;
     border-radius: 50px;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
     /* Updated drop shadow */
@@ -927,7 +927,7 @@ body {
     height: 30%;
     aspect-ratio: 1.3/1;
     border-radius: 150px 150px 10% 10%;
-    border: 4vw solid var(--background-100);
+    border: 4vw solid var(--text-800);
     border-bottom: 0px;
     position: absolute;
     transform: translateY(-80%);
@@ -938,7 +938,7 @@ body {
 
 @media screen and (min-width: 750px) {
     .top-lock {
-        border: 20px solid var(--background-100);
+        border: 20px solid var(--text-800);
         border-bottom: 0px;
     }
 }
@@ -947,8 +947,8 @@ body {
     height: 50%;
     aspect-ratio: 1.1/1;
     /* Set the aspect ratio to 1:1 for a perfect square */
-    background-color: var(--background-100);
-    border: 10px solid var(--background-100);
+    background-color: var(--text-800);
+    border: 10px solid var(--text-800);
     border-radius: 10%;
     position: absolute;
     transform: translateY(+20%);
@@ -1119,6 +1119,8 @@ body {
 }
 
 
+
+
 /*
 .grid .item:hover,
 .grid .item:focus {
@@ -1253,11 +1255,72 @@ body {
     }
 
     .top-lock {
-        border-color: var(--text-800);
+        border-color: var(--background-100);
         animation: animatedLock 1.8s ease-in-out;
     }
     .bottom-lock {
-        border-color: var(--text-800);
-        background-color: var(--text-800);
+        border-color: var(--background-100);
+        background-color: var(--background-100);
     }
+}
+
+.overlay {
+    position: fixed; /* Fixed/sticky position */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+    z-index: 70; /* Specify a stack order in case you're using a different order for other elements */
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+}
+
+/* The Modal (background) */
+.modal-content {
+    background-color: var(--background-300);
+    margin: 1.5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 2px solid var(--text-600);
+    width: 80%; /* Could be more or less, depending on screen size */
+    z-index: 75; /* Sit on top of the overlay */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    overflow-y: scroll;
+    height: 93vh;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    transform: scale(0.7); /* Start scaled down */
+}
+
+.close-modal {
+    color: var(--text-600);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* custom scrollbar */
+.modal-content::-webkit-scrollbar {
+    width: 40px;
+    border-radius: 50px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--background-300); /* Light color for the track */
+    border-radius: 50px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--text-600); /* Dark color for the thumb */
+    border-radius: 50px;
+    border: 15px solid var(--background-300);
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--text-700); /* Darker color when hovering */
 }
