@@ -1176,44 +1176,32 @@ body {
 
 .overlay {
     position: fixed;
-    /* Fixed/sticky position */
     display: none;
-    /* Hidden by default */
     width: 100%;
-    /* Full width (cover the whole page) */
     height: 100%;
-    /* Full height (cover the whole page) */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Black background with opacity */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
     z-index: 70;
-    /* Specify a stack order in case you're using a different order for other elements */
     transition: opacity 0.2s ease-in-out;
     opacity: 0;
 }
 
-/* The Modal (background) */
 .modal-content {
     background-color: var(--background-300);
-    margin: 1.5% auto;
-    /* 15% from the top and centered */
+    margin: 10% auto;
     padding: 20px;
     border: 2px solid var(--text-600);
     width: 70%;
-    /* Could be more or less, depending on screen size */
     z-index: 75;
-    /* Sit on top of the overlay */
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
     overflow-y: scroll;
-    height: 92.5vh;
     text-align: center;
     transition: transform 0.2s ease-in-out;
-    transform: scale(0.7);
-    /* Start scaled down */
+    transform: scale(0.7); /* Start scaled down */
 }
 
 .close-modal {
