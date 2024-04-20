@@ -168,7 +168,7 @@ also inspired by: https://www.littlewebsite.co/
         padding: 4vw;
         padding-top: 70px;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(auto-fit, minmax(10px, 50px));
+        grid-template-rows: repeat(5, 25vh);
         grid-template-areas:
             "hero   hero"
             "small1 small2"
@@ -1174,45 +1174,6 @@ body {
     }
 }
 
-.overlay {
-    position: fixed;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
-    z-index: 70;
-    transition: opacity 0.2s ease-in-out;
-    opacity: 0;
-}
-
-.modal-content {
-    background-color: var(--background-300);
-    margin: 10% auto;
-    padding: 20px;
-    border: 2px solid var(--text-600);
-    width: 70%;
-    z-index: 75;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
-    overflow-y: scroll;
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
-    transform: scale(0.7); /* Start scaled down */
-}
-
-.close-modal {
-    color: var(--text-600);
-    float: right;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
-}
-
 /* Project list */
 .project-list {
     margin: 2vh;
@@ -1234,6 +1195,9 @@ body {
     border-radius: var(--curved-border);
     border: 3px solid var(--text-800);
     box-shadow: var(--image-shadow);
+}
+
+.project-list-item {
     /* flex */
     display: flex;
     flex-direction: row;
@@ -1262,28 +1226,22 @@ body {
 
 .project-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin: 2vh;
+    padding: 5vw;
 }
 
 .project-preview {
-    width: 40%;
+    width: 95%;
+    aspect-ratio: 16/9;
     border-radius: 10px;
-    transition: border-color 0.3s ease;
     box-shadow: var(--image-shadow);
-    margin-left: auto;
-    /* Add this line */
-}
-
-.project-list iframe {
-    width: 25.5vw;
-    height: 30vh;
+    margin: 1vh auto 2vh auto;
 }
 
 .project-description {
-    margin-left: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 .project-description h1 {
@@ -1295,20 +1253,21 @@ body {
     font-size: 1.2rem;
     font-weight: 400;
 }
+
 .view-project-buttons {
     margin-top: 2.5vh;
     display: flex;
-    justify-content: center; /* optional: add some space between the buttons */
+    justify-content: center;
+    /* optional: add some space between the buttons */
 }
 
 .project-button {
-    padding: 0.5vw;
-    padding-bottom: 0.65vw;
+    padding: 0.5vh 1vw;
     border-radius: 10px;
     border: 2px solid var(--text-800);
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    width: 15vw;
+    width: 45%;
     display: inline-block;
     margin: 0 0.5vw;
 }
@@ -1319,6 +1278,49 @@ body {
 
 .project-button-text {
     color: var(--text-950);
+}
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black background with opacity */
+    z-index: 70;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.modal-content {
+    background-color: var(--background-300);
+    margin: 0px;
+    padding: 0.2vw;
+    border: 2px solid var(--text-600);
+    width: 100%;
+    z-index: 75;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    overflow-y: scroll;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    transform: scale(0.7);
+    /* Start scaled down */
+}
+
+.close-modal {
+    color: var(--text-600);
+    margin: 10px 3vw;
+    position: fixed;
+    left: 0;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
 }
 
 
@@ -1341,21 +1343,61 @@ body {
     }
 
     .project-button {
-        width: 15vw;
+        padding: 0.5vw;
+        padding-bottom: 0.65vw;
+        width: 25vw;
+        margin: 0 0.5vw;
+    }
+
+    .modal-content {
+        margin: 6vh auto;
+        padding: 0.2vw;
+        width: 70%;
     }
 }
 
 @media screen and (min-width: 1400px) {
+    .modal-content {
+        margin: 20vh auto;
+        padding: 20px;
+    }
+
+    .project-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-description {
+        margin: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .project-preview {
+        width: 40%;
+        border-radius: 10px;
+        transition: border-color 0.3s ease;
+        box-shadow: var(--image-shadow);
+        margin: auto 0 0 0;
+    }
+
     .project-list ul h2 {
         font-size: calc(1rem + 0.3vh);
+        margin: auto;
     }
 
     .project-list ul li {
         padding: 1vw;
         margin: 1.2vh;
     }
+
     .project-button {
-        width: 200px;
+        padding: 0.5vw;
+        padding-bottom: 0.65vw;
+        width: 15vw;
+        margin: 0 0.5vw;
     }
 }
 
