@@ -39,16 +39,12 @@ function switchTheme() {
         themeSwitcher.textContent = '🌙'; // Show a moon when the theme is light
         channelsightLogo.src = "https://assets-global.website-files.com/64248e7ed5f30d6effe57d5d/645bc6cf55c0bc11098dd759_Navbar%20logo_Word%20Mark%20Dark%20Grey%20Large%20140px%20x%20480px_Word%20Mark%20Dark%20Grey%20Large%20140px%20x%20480px.png";
         workdayLogo.src = "assets/Workday_Logo.png";
-        workdayLogo.style.width = "85%";
-        workdayLogo.style.padding = "22px";
 
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         themeSwitcher.textContent = '🌞'; // Show a sun when the theme is dark
         channelsightLogo.src = "https://assets-global.website-files.com/64248e7ed5f30d6effe57d5d/64612b0b2bd50f8f9e51fba0_Navbar%20logo_Word%20Mark%20white%20Large%20140px%20x%20480px_Word%20Mark%20Dark%20Grey%20Large%20140px%20x%20480px.png";
         workdayLogo.src = "assets/Workday_Logo_Dark.png";
-        workdayLogo.style.width = "82%";
-        workdayLogo.style.padding = "26px";
     }
 }
 
