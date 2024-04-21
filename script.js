@@ -112,8 +112,8 @@ function showModal(modalName) {
     }, 20);
 }
 
-function hideModal() {
-    var modal = document.querySelector('.overlay');
+function hideModal(modalName) {
+    var modal = document.getElementById(modalName);
     var modalContent = modal.querySelector('.modal-content');
     modal.style.opacity = "0";
     modalContent.style.transform = "scale(0.7)";
@@ -128,21 +128,28 @@ const indicator = document.querySelector('.indicator');
 const themeSwitcher = document.querySelector('#theme-switcher');
 const workdayLogo = document.querySelector('#workday-logo');
 const channelsightLogo = document.querySelector('#channelsight-logo');
-const closeModal = document.querySelector('.close-modal');
-const modalBackdrop = document.querySelector('.overlay');
 
 // Listen for the scroll event
 window.addEventListener('scroll', setIndicator);
 themeSwitcher.addEventListener('click', switchTheme);
 
-closeModal.addEventListener('click', hideModal);
-modalBackdrop.addEventListener('click', function(event) {
-    const modalContent = document.querySelector('.modal-content');
-    if (event.target === modalContent || modalContent.contains(event.target)) {
-        return;
-    }
-    hideModal();
+var mouseX = 0;
+var mouseY = 0;
+document.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 });
+
+function hideModalOverlay(modalName) {
+    var modal = document.getElementById(modalName);
+    var modalContent = modal.querySelector('.modal-content');
+    var rect = modalContent.getBoundingClientRect();
+    var isInBounds = mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
+
+    if (!isInBounds) {
+        hideModal(modalName);
+    }
+};
 
 
 // Set the indicator when the page loads

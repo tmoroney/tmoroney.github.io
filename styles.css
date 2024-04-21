@@ -465,6 +465,10 @@ body {
     font-size: calc(1rem + 1vw);
 }
 
+.bento-container .primary-xs {
+    font-size: calc(1rem + 0.6vw);
+}
+
 .bento-container .secondary {
     font-size: calc(0.8rem + 1vw);
     margin-top: -0.8rem;
@@ -481,6 +485,10 @@ body {
 
     .bento-container .primary-small {
         font-size: calc(1rem + 1vw);
+    }
+
+    .bento-container .primary-xs {
+        font-size: calc(0.6rem + 0.6vw);
     }
 
     .bento-container .secondary {
@@ -986,20 +994,69 @@ body {
     rotate: 10deg;
 }
 
+.bento-container img {
+    width: 99%;
+    border-radius: var(--curved-border);
+    margin: 1% 0;
+    box-shadow: var(--shadow);
+}
+
+.hidden-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.overlay-container {
+    position: relative;
+    display: inline-block;
+    /* or "block" if you want it to take the full width */
+    width: 100%;
+}
+
+.bento-container .primary-xs {
+    color: var(--text-100);
+    text-shadow: var(--text-shadow);
+}
+
+.featured-project {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    padding: 0.4vh;
+    font-style: bold;
+    color: var(--primary-500);
+    /* or any color that stands out on your image */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: var(--shadow);
+    border-radius: 18px;
+    font-size: calc(0.7rem + 0.3vw);
+    border: 3px solid var(--primary-500);
+}
+
+.fa-star {
+    color: var(--primary-500);
+    font-size: calc(0.8rem + 0.3vw);
+    margin: 0 0.2vw;
+}
 
 #workday-logo {
+    width: 60%;
+    aspect-ratio: 20/10;
     border: 4px solid var(--background-300);
     background: var(--background-200);
     padding: 2vh;
     border-radius: 30px;
     transition: width 0.3s ease-in-out, height 0.3s ease-in-out, padding 0.3s ease-in-out, border-radius 0.3s ease-in-out, border-color 0.3s ease-in-out, background 0.3s ease-in-out, border-width 0.2s ease-in-out;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    margin-top: 0px;
-    margin-bottom: 2%;
 }
 
 #channelsight-logo {
-    width: 22vh;
+    width: 60%;
+    aspect-ratio: 21/10;
     border: 4px solid var(--background-300);
     background: var(--background-200);
     padding: 1.6vh;
@@ -1008,19 +1065,49 @@ body {
     border-radius: 30px;
     transition: width 0.3s ease-in-out, height 0.3s ease-in-out, padding 0.3s ease-in-out, border-radius 0.3s ease-in-out, border-color 0.3s ease-in-out, background 0.3s ease-in-out, border-width 0.2s ease-in-out;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    margin-top: 6%;
-    margin-bottom: 2%;
 }
 
 @media screen and (min-width: 750px) {
+    #workday-logo {
+        width: 70%;
+        aspect-ratio: 20/10;
+        padding: 2vh;
+        aspect-ratio: 20/10;
+    }
+
     #channelsight-logo {
-        width: 13vw;
+        width: 70%;
+        aspect-ratio: 21/10;
+        padding: 1.6vh;
+        padding-top: 2.6vh;
+        padding-bottom: 2.6vh;
+    }
+
+
+    .featured-project {
+        font-size: calc(0.5rem + 0.4vw);
+        width: 80%;
     }
 }
 
 @media screen and (min-width: 1400px) {
+    #workday-logo {
+        width: 55%;
+        padding: 2vh;
+        aspect-ratio: 20/10;
+    }
+
     #channelsight-logo {
-        width: 11.5vw;
+        width: 55%;
+        aspect-ratio: 20/9.5;
+        padding: 1.6vh;
+        padding-top: 2.6vh;
+        padding-bottom: 2.6vh;
+    }
+
+    .featured-project {
+        font-size: calc(0.5rem + 0.4vw);
+        width: 70%;
     }
 }
 
@@ -1059,25 +1146,23 @@ body {
     text-shadow: none;
 }
 
-.grid .item:nth-child(9) {
-    grid-area: small5;
-    background: var(--background-100);
-    color: var(--text-900);
-    cursor: pointer;
-    transition: color 0.25s ease-in-out;
-}
-
-.grid .item:nth-child(10) {
-    grid-area: small6;
-    background: var(--background-100);
+.grid .item:nth-child(12) {
+    grid-area: small9;
     color: var(--text-900);
     cursor: pointer;
     transition: color 0.25s ease-in-out;
     padding: 3vw;
 }
 
-.grid .item:nth-child(9):hover,
-.grid .item:nth-child(10):hover {
+.grid .item:nth-child(13) {
+    grid-area: small10;
+    color: var(--text-900);
+    cursor: pointer;
+    transition: color 0.25s ease-in-out;
+}
+
+.grid .item:nth-child(12):hover,
+.grid .item:nth-child(13):hover {
     color: var(--text-500);
 
     #workday-logo {
@@ -1093,7 +1178,7 @@ body {
 }
 
 .grid .item:nth-child(7) .bento-container {
-    margin-bottom: 1.5vh;
+    margin-bottom: 5vh;
 }
 
 @media screen and (min-width: 750px) {
@@ -1108,18 +1193,26 @@ body {
     }
 }
 
+.grid .item:nth-child(9),
+.grid .item:nth-child(10),
+.grid .item:nth-child(11) {
+    transition: color 0.25s ease-in-out;
+    background: var(--primary-500);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
 .grid .item:nth-child(5),
 .grid .item:nth-child(6),
 .grid .item:nth-child(7),
 .grid .item:nth-child(8),
-.grid .item:nth-child(10),
-.grid .item:nth-child(11),
 .grid .item:nth-child(12),
 .grid .item:nth-child(13),
 .grid .item:nth-child(14),
 .grid .item:nth-child(15),
 .grid .item:nth-child(16) {
     /* background: var(--background-500); */
+    transition: color 0.25s ease-in-out;
     background: var(--background-100);
     pointer-events: auto;
     cursor: pointer;
@@ -1130,6 +1223,7 @@ body {
 .grid .item:nth-child(6):hover,
 .grid .item:nth-child(7):hover,
 .grid .item:nth-child(8):hover,
+.grid .item:nth-child(9):hover,
 .grid .item:nth-child(10):hover,
 .grid .item:nth-child(11):hover,
 .grid .item:nth-child(12):hover,
@@ -1137,6 +1231,8 @@ body {
 .grid .item:nth-child(14):hover,
 .grid .item:nth-child(15):hover,
 .grid .item:nth-child(16):hover {
+
+    color: var(--text-500);
 
     /* Add your hover effect styles here */
     .square {
@@ -1176,7 +1272,7 @@ body {
 
 /* Project list */
 .project-list {
-    margin: 2vh;
+    margin: 2vh 1vw;
 }
 
 .project-list ul {
@@ -1187,22 +1283,14 @@ body {
 }
 
 .project-list ul li {
-    padding: 15px;
-    margin: 2.2vw;
+    padding: 0;
+    margin: 1vw;
     transition: background-color 0.3s ease;
     border-radius: 30px;
     background: var(--background-100);
     border-radius: var(--curved-border);
     border: 3px solid var(--text-800);
     box-shadow: var(--image-shadow);
-}
-
-.project-list-item {
-    /* flex */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 .project-list ul li a {
@@ -1215,13 +1303,9 @@ body {
     cursor: pointer;
 }
 
-.project-list h1 {
-    font-size: 2rem;
-}
-
-.project-list ul h2 {
-    font-size: 1rem;
-    margin-left: auto;
+.project-list h2 {
+    font-size: calc(1rem + 0.8vw);
+    padding: 0 0 0.4vh 0;
 }
 
 .project-content {
@@ -1244,11 +1328,6 @@ body {
     margin-bottom: 2vh;
 }
 
-.project-description h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5vh;
-}
-
 .project-description p {
     font-size: 1.2rem;
     font-weight: 400;
@@ -1258,7 +1337,6 @@ body {
     margin-top: 2.5vh;
     display: flex;
     justify-content: center;
-    /* optional: add some space between the buttons */
 }
 
 .project-button {
@@ -1298,14 +1376,11 @@ body {
 
 .modal-content {
     background-color: var(--background-300);
-    margin: 0px;
-    padding: 0.2vw;
     border: 2px solid var(--text-600);
-    width: 100%;
     z-index: 75;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
-    overflow-y: scroll;
+    overflow-y: auto;
     text-align: center;
     transition: transform 0.2s ease-in-out;
     transform: scale(0.7);
@@ -1313,28 +1388,27 @@ body {
 }
 
 .close-modal {
-    color: var(--text-600);
-    margin: 10px 3vw;
+    margin: 2.8vh 6vw;
     position: fixed;
-    left: 0;
     font-size: 30px;
-    font-weight: bold;
+    right: 0;
     cursor: pointer;
     user-select: none;
+}
+
+.fa-times {
+    color: inherit;
+}
+
+.modal-content h1 {
+    padding-top: 1.5vh;
+    font-size: 2rem;
 }
 
 
 @media screen and (min-width: 750px) {
     .project-list h1 {
         font-size: calc(1rem + 1vw);
-    }
-
-    .project-list ul {
-        padding-bottom: 0.5vh;
-    }
-
-    .project-list ul h2 {
-        font-size: calc(0.5rem + 0.6vw);
     }
 
     .project-list ul li {
@@ -1351,7 +1425,6 @@ body {
 
     .modal-content {
         margin: 6vh auto;
-        padding: 0.2vw;
         width: 70%;
     }
 }
@@ -1372,7 +1445,7 @@ body {
     .project-description {
         margin: auto;
         margin-top: 0;
-        margin-bottom: 0;
+        margin-bottom: 2vh;
     }
 
     .project-preview {
@@ -1383,13 +1456,8 @@ body {
         margin: auto 0 0 0;
     }
 
-    .project-list ul h2 {
-        font-size: calc(1rem + 0.3vh);
-        margin: auto;
-    }
-
     .project-list ul li {
-        padding: 1vw;
+        padding: 0.7vw;
         margin: 1.2vh;
     }
 
@@ -1398,6 +1466,18 @@ body {
         padding-bottom: 0.65vw;
         width: 15vw;
         margin: 0 0.5vw;
+    }
+
+    .close-modal {
+        margin: 1.5vh 5vw;
+    }
+
+    .modal-content h1 {
+        padding-top: 0.5vh;
+    }
+
+    .project-list {
+        margin: 1vh 1vw;
     }
 }
 
