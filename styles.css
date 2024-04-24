@@ -175,9 +175,9 @@ also inspired by: https://www.littlewebsite.co/
             "small1 small2"
             "small3 small4"
             "med2   med2"
+            "big1   big1"
+            "big1   big1"
             "small5 small6"
-            "big1   big1"
-            "big1   big1"
             "small7 small8"
             "small9 small10"
             "med1   med1";
@@ -997,8 +997,8 @@ body {
 .bento-container img {
     width: 99%;
     border-radius: var(--curved-border);
-    margin: 1% 0;
-    box-shadow: var(--shadow);
+    margin: 1%;
+    box-shadow: var(--inset-shadow);
 }
 
 .hidden-link {
@@ -1012,11 +1012,6 @@ body {
     display: inline-block;
     /* or "block" if you want it to take the full width */
     width: 100%;
-}
-
-.bento-container .primary-xs {
-    color: var(--text-100);
-    text-shadow: var(--text-shadow);
 }
 
 .featured-project {
@@ -1099,16 +1094,16 @@ body {
     background: var(--background-200);
     border-radius: 2vh;
     transition: width 0.3s ease-in-out, height 0.3s ease-in-out, padding 0.3s ease-in-out, border-radius 0.3s ease-in-out, border-color 0.3s ease-in-out, background 0.3s ease-in-out, border-width 0.2s ease-in-out;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--image-shadow);
 }
 
 #workday-logo {
-    aspect-ratio: 18/10;
+    aspect-ratio: 17/10;
     padding: 20px;
 }
 
 #channelsight-logo {
-    aspect-ratio: 26/10;
+    aspect-ratio: 23/10;
     padding: 10px;
 }
 
@@ -1119,6 +1114,16 @@ body {
 
 
 @media screen and (min-width: 750px) {
+    #workday-logo {
+        aspect-ratio: 19/10;
+        padding: 20px;
+    }
+    
+    #channelsight-logo {
+        aspect-ratio: 26/10;
+        padding: 10px;
+    }
+
     .featured-project {
         font-size: calc(0.5rem + 0.4vw);
         width: 80%;
@@ -1183,24 +1188,8 @@ body {
     transition: color 0.25s ease-in-out;
 }
 
-.grid .item:nth-child(12):hover,
-.grid .item:nth-child(13):hover {
-    color: var(--text-500);
-
-    #workday-logo {
-        border-color: var(--background-400);
-        background: var(--background-100);
-    }
-
-    #channelsight-logo {
-        border-color: var(--background-400);
-        background: var(--background-100);
-    }
-
-}
-
 .grid .item:nth-child(7) .bento-container {
-    margin-bottom: 5vh;
+    margin-bottom: 4vh;
 }
 
 @media screen and (min-width: 750px) {
@@ -1219,7 +1208,8 @@ body {
 .grid .item:nth-child(10),
 .grid .item:nth-child(11) {
     transition: color 0.25s ease-in-out;
-    background: var(--primary-500);
+    background: var(--background-100);
+    color: var(--text-900);
     pointer-events: auto;
     cursor: pointer;
 }
