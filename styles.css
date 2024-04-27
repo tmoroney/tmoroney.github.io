@@ -1002,7 +1002,7 @@ body {
     border: 3px solid var(--text-500);
     background-color: var(--background-200);
     border-radius: 20px;
-    margin-bottom: 23%;
+    margin-bottom: 25%;
     box-shadow: var(--shadow);
 }
 
@@ -1019,7 +1019,7 @@ body {
     justify-content: center;
     align-items: center;
     transition: border-color 0.3s ease-in-out, background-color 0.2s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
-    margin-bottom: 23%;
+    margin-bottom: 25%;
 }
 
 .lens {
