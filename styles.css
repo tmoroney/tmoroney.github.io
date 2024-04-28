@@ -167,7 +167,7 @@ also inspired by: https://www.littlewebsite.co/
         display: grid;
         grid-gap: 3vw;
         padding: 4vw;
-        padding-top: 70px;
+        padding-top: 100px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, 25vh);
         grid-template-areas:
@@ -187,7 +187,7 @@ also inspired by: https://www.littlewebsite.co/
         .grid {
             padding: 1.5vw;
             padding-top: 110px;
-            grid-gap: 1.5vw;
+            grid-gap: 1vw;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(5, 25vh);
             grid-template-areas:
@@ -203,7 +203,7 @@ also inspired by: https://www.littlewebsite.co/
         .grid {
             padding: 1.5vw;
             padding-top: 110px;
-            grid-gap: 1.5vw;
+            grid-gap: 1vw;
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(4, 30vh);
             grid-template-areas:
@@ -221,21 +221,14 @@ also inspired by: https://www.littlewebsite.co/
         justify-content: center;
         align-items: center;
         outline: transparent;
-        transition: background 500ms, outline 500ms;
+        transition: background-color 500ms, outline 500ms;
     }
 
     /* Base styling for grid items */
     .grid .item:nth-child(1),
     .grid .item:nth-child(2),
     .grid .item:nth-child(3),
-    .grid .item:nth-child(4) {
-        position: relative;
-        padding: 1vw;
-        box-shadow: var(--shadow);
-        background-position: left bottom;
-        background-size: 150% 100%;
-    }
-
+    .grid .item:nth-child(4),
     .grid .item:nth-child(5),
     .grid .item:nth-child(6),
     .grid .item:nth-child(7),
@@ -250,7 +243,7 @@ also inspired by: https://www.littlewebsite.co/
     .grid .item:nth-child(16) {
         position: relative;
         padding: 1vw;
-        box-shadow: var(--shadow);
+        /* box-shadow: var(--shadow); */
         background-position: left bottom;
         background-size: 100% 100%;
     }
@@ -278,32 +271,31 @@ body {
 }
 
 #theme-switcher {
-    opacity: 0;
     /* make text not able to be selected */
     user-select: none;
     font-size: 1.4rem;
+    position: fixed;
+    top: 20px;
+    right: 0px;
+    margin-right: 6%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: var(--nav-background);
+    backdrop-filter: blur(30px);
+    border: solid 2px var(--nav-background);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    outline: none;
 }
 
 @media screen and (min-width: 750px) {
     #theme-switcher {
-        position: fixed;
-        top: 20px;
-        right: 0px;
         margin-right: 2vw;
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 65px;
-        height: 65px;
-        border-radius: 50%;
-        background: var(--nav-background);
-        backdrop-filter: blur(30px);
-        border: solid 2px var(--nav-background);
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        outline: none;
-        opacity: 1;
     }
 }
 
@@ -311,8 +303,14 @@ body {
 .navbar-container {
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 18%;
+}
+
+@media screen and (min-width: 750px) {
+    .navbar-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .navbar {
@@ -1010,7 +1008,7 @@ body {
     border: 3px solid var(--text-500);
     background-color: var(--background-200);
     border-radius: 20px;
-    margin-bottom: 50%;
+    margin-bottom: 35%;
     box-shadow: var(--shadow);
     transition: border-color 0.3s ease-in-out, background-color 0.2s ease-in-out;
 }
@@ -1029,19 +1027,19 @@ body {
     align-items: center;
     transition: border-color 0.3s ease-in-out, background-color 0.2s ease-in-out, border-width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
     width: 55%;
-    margin-bottom: 50%;
+    margin-bottom: 35%;
 }
 
 @media screen and (min-width: 750px) {
     .camera-body {
-        width: 70%;
+        width: 65%;
         border-radius: 20px;
         margin-bottom: 36%;
     }
 
     .camera {
-        width: 50%;
-        margin-bottom: 38%;
+        width: 45%;
+        margin-bottom: 36%;
     }
 }
 
@@ -1066,14 +1064,17 @@ body {
         width: 70%;
         /* background-color: var(--background-50); */
     }
+
     20% {
         width: 50%;
         /* background-color: var(--background-900); */
     }
+
     50% {
         width: 70%;
         /* background-color: var(--background-50); */
     }
+
     100% {
         width: 70%;
         /* background-color: var(--background-50); */
@@ -1091,6 +1092,26 @@ body {
     transition: background-color 0.3s ease-in-out;
     animation: animatedCamera 2s ease-in infinite;
     /* box-shadow: var(--inset-shadow); */
+}
+
+.auto-subs {
+    position: absolute;
+    font-style: italic;
+    font-size: calc(2rem + 2.5vw);
+    font-weight: 800;
+    color: var(--text-500);
+    /* text-shadow: 
+        1px 1px 1px var(--text-800), 
+        -1px -1px 1px var(--text-800), 
+        1px -1px 1px var(--text-800), 
+        -1px 1px 1px var(--text-800); */
+    line-height: 2.2;
+}
+
+@media screen and (min-width: 750px) {
+    .auto-subs {
+        line-height: 2.1;
+    }
 }
 
 
@@ -1144,8 +1165,9 @@ body {
 }
 
 .company-list h1 {
-    font-size: calc(1.5rem + 0.5vw);
-    margin-bottom: 1.5vh;
+    font-size: calc(1.8rem + 1vw);
+    margin: 0 4vh;
+    color: var(--text-900);
 }
 
 .company-list ul {
@@ -1161,12 +1183,7 @@ body {
     border-radius: 30px;
     background: var(--background-100);
     border-radius: var(--curved-border);
-    border: 3px solid var(--text-800);
-    box-shadow: var(--image-shadow);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 1.5vh;
+    padding: calc(10px + 0.5vw);
 }
 
 .company-list ul li a {
@@ -1180,49 +1197,53 @@ body {
 }
 
 .company-description {
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin: 2vh auto;
+    display: inline-block;
+    width: 60%;
+}
+
+.company-description h2 {
+    font-size: calc(1.2rem + 0.4vw);
 }
 
 .company-description p {
-    font-size: 1.2rem;
+    font-size: calc(1.2rem + 0.2vw);
     font-weight: 500;
 }
 
 .company-logo {
-    width: 45%;
-    border: 4px solid var(--background-300);
+    width: 40%;
+    border: 3px solid var(--background-400);
     background: var(--background-200);
-    border-radius: 2vh;
+    border-radius: var(--curved-border);
     transition: width 0.3s ease-in-out, height 0.3s ease-in-out, padding 0.3s ease-in-out, border-radius 0.3s ease-in-out, border-color 0.3s ease-in-out, background 0.3s ease-in-out, border-width 0.2s ease-in-out;
-    box-shadow: var(--image-shadow);
+    /* box-shadow: var(--image-shadow); */
+    margin-left: 0.5vw;
+    display: inline-block;
 }
 
 #workday-logo {
-    aspect-ratio: 17/10;
+    width: 100%;
     padding: 20px;
+    padding-bottom: 15px;
 }
 
 #channelsight-logo {
-    aspect-ratio: 23/10;
+    width: 100%;
     padding: 10px;
+    padding-bottom: 5px;
 }
 
 #trinity-logo {
-    aspect-ratio: var(--trinity-aspect-ratio);
+    width: 100%;
     padding: 4px;
+    padding-bottom: 0px;
 }
 
 
 @media screen and (min-width: 750px) {
-    #workday-logo {
-        aspect-ratio: 19/10;
-        padding: 20px;
-    }
-    
-    #channelsight-logo {
-        aspect-ratio: 26/10;
-        padding: 10px;
+    .company-logo {
+        width: 50%;
     }
 
     .featured-project {
@@ -1234,157 +1255,7 @@ body {
 @media screen and (min-width: 1400px) {
     .featured-project {
         font-size: calc(0.5rem + 0.4vw);
-        width: 70%;
-    }
-}
-
-
-
-
-
-/*
-.grid .item:hover,
-.grid .item:focus {
-    background-position: top right;
-}
-*/
-
-/* Grid item specific styles */
-.grid .item:nth-child(1) {
-    grid-area: hero;
-    background: var(--background-200);
-}
-
-.grid .item:nth-child(2) {
-    grid-area: big1;
-    background: var(--text-500);
-}
-
-.grid .item:nth-child(3) {
-    grid-area: med1;
-    background: var(--background-100);
-
-}
-
-.grid .item:nth-child(4) {
-    grid-area: med2;
-    background: var(--background-100);
-    transition: color 0.25s ease-in-out;
-    cursor: pointer;
-    text-shadow: none;
-}
-
-.grid .item:nth-child(12) {
-    grid-area: small9;
-    color: var(--text-900);
-    cursor: pointer;
-    transition: color 0.25s ease-in-out;
-    padding: 3vw;
-}
-
-.grid .item:nth-child(13) {
-    grid-area: small10;
-    color: var(--text-900);
-    cursor: pointer;
-    transition: color 0.25s ease-in-out;
-}
-
-.grid .item:nth-child(7) .bento-container {
-    margin-bottom: 4vh;
-}
-
-@media screen and (min-width: 750px) {
-    .grid .item:nth-child(7) .bento-container {
-        margin-bottom: 5vh;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .grid .item:nth-child(7) .bento-container {
-        margin-bottom: 4vh;
-    }
-}
-
-.grid .item:nth-child(9),
-.grid .item:nth-child(10),
-.grid .item:nth-child(11) {
-    transition: color 0.25s ease-in-out;
-    background: var(--background-100);
-    color: var(--text-900);
-    pointer-events: auto;
-    cursor: pointer;
-}
-
-.grid .item:nth-child(5),
-.grid .item:nth-child(6),
-.grid .item:nth-child(7),
-.grid .item:nth-child(8),
-.grid .item:nth-child(12),
-.grid .item:nth-child(13),
-.grid .item:nth-child(14),
-.grid .item:nth-child(15),
-.grid .item:nth-child(16) {
-    /* background: var(--background-500); */
-    transition: color 0.25s ease-in-out;
-    background: var(--background-100);
-    pointer-events: auto;
-    cursor: pointer;
-}
-
-.grid .item:nth-child(4):hover,
-.grid .item:nth-child(5):hover,
-.grid .item:nth-child(6):hover,
-.grid .item:nth-child(7):hover,
-.grid .item:nth-child(8):hover,
-.grid .item:nth-child(9):hover,
-.grid .item:nth-child(10):hover,
-.grid .item:nth-child(11):hover,
-.grid .item:nth-child(12):hover,
-.grid .item:nth-child(13):hover,
-.grid .item:nth-child(14):hover,
-.grid .item:nth-child(15):hover,
-.grid .item:nth-child(16):hover {
-
-    color: var(--text-500);
-
-    /* Add your hover effect styles here */
-    .square {
-        border-color: var(--text-300);
-        border-radius: 25%;
-    }
-
-    .bubble {
-        /*border-color: var(--text-200); */
-        /* remove background color */
-        border-color: var(--text-300);
-        background-color: var(--background-100);
-    }
-
-    .cube {
-        /*border-color: var(--text-200); */
-        /* remove background color */
-        border-color: var(--text-300);
-        background-color: var(--background-100);
-    }
-
-    .eye {
-        border-color: var(--text-300);
-        background-color: var(--background-100);
-    }
-
-    .camera-body {
-        border-color: var(--text-300);
-        background-color: var(--background-100);
-    }
-
-    .top-lock {
-        border-color: var(--text-300);
-        animation: animatedLock 1.8s ease-in-out;
-    }
-
-    .bottom-lock {
-        border-color: var(--text-300);
-        background-color: var(--text-300);
+        width: 100%;
     }
 }
 
@@ -1502,7 +1373,7 @@ body {
     text-align: center;
     transition: transform 0.2s ease-in-out;
     transform: scale(0.7);
-    max-height: 100vh;
+    max-height: 97vh;
     /* Start scaled down */
 }
 
@@ -1526,7 +1397,7 @@ body {
 
 
 @media screen and (min-width: 750px) {
-    
+
     .project-list h1 {
         font-size: calc(1rem + 1vw);
     }
@@ -1635,4 +1506,148 @@ body {
 .modal-content::-webkit-scrollbar-thumb:hover {
     background: var(--text-700);
     /* Darker color when hovering */
+}
+
+
+
+
+
+
+/* Grid item specific styles */
+.grid .item:nth-child(1) {
+    grid-area: hero;
+    background: var(--background-200);
+}
+
+.grid .item:nth-child(2) {
+    grid-area: big1;
+    background: var(--text-500);
+}
+
+.grid .item:nth-child(3) {
+    grid-area: med1;
+    background: var(--background-100);
+
+}
+
+.grid .item:nth-child(4) {
+    grid-area: med2;
+    background: var(--background-100);
+    transition: color 0.25s ease-in-out;
+    cursor: pointer;
+    text-shadow: none;
+}
+
+.grid .item:nth-child(12) {
+    grid-area: small9;
+    color: var(--text-900);
+    cursor: pointer;
+    transition: color 0.25s ease-in-out;
+    padding: 3vw;
+}
+
+.grid .item:nth-child(13) {
+    grid-area: small10;
+    background-color: var(--background-100);
+    color: var(--text-500);
+    cursor: pointer;
+    transition: color 0.25s ease-in-out;
+}
+
+.grid .item:nth-child(7) .bento-container {
+    margin-bottom: 4vh;
+}
+
+@media screen and (min-width: 750px) {
+    .grid .item:nth-child(7) .bento-container {
+        margin-bottom: 5vh;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .grid .item:nth-child(7) .bento-container {
+        margin-bottom: 4vh;
+    }
+}
+
+.grid .item:nth-child(9),
+.grid .item:nth-child(10),
+.grid .item:nth-child(11) {
+    transition: color 0.25s ease-in-out;
+    background: var(--background-100);
+    color: var(--text-900);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.grid .item:nth-child(5),
+.grid .item:nth-child(6),
+.grid .item:nth-child(7),
+.grid .item:nth-child(8),
+.grid .item:nth-child(12),
+.grid .item:nth-child(14),
+.grid .item:nth-child(15),
+.grid .item:nth-child(16) {
+    /* background: var(--background-500); */
+    transition: color 0.25s ease-in-out;
+    background: var(--background-100);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.grid .item:nth-child(4):hover,
+.grid .item:nth-child(5):hover,
+.grid .item:nth-child(6):hover,
+.grid .item:nth-child(7):hover,
+.grid .item:nth-child(8):hover,
+.grid .item:nth-child(9):hover,
+.grid .item:nth-child(10):hover,
+.grid .item:nth-child(11):hover,
+.grid .item:nth-child(12):hover,
+.grid .item:nth-child(13):hover,
+.grid .item:nth-child(14):hover,
+.grid .item:nth-child(15):hover,
+.grid .item:nth-child(16):hover {
+
+    color: var(--text-500);
+
+    /* Add your hover effect styles here */
+    .square {
+        border-color: var(--text-300);
+        border-radius: 25%;
+    }
+
+    .bubble {
+        /*border-color: var(--text-200); */
+        /* remove background color */
+        border-color: var(--text-300);
+        background-color: var(--background-100);
+    }
+
+    .cube {
+        /*border-color: var(--text-200); */
+        /* remove background color */
+        border-color: var(--text-300);
+        background-color: var(--background-100);
+    }
+
+    .eye {
+        border-color: var(--text-300);
+        background-color: var(--background-100);
+    }
+
+    .camera-body {
+        border-color: var(--text-300);
+        background-color: var(--background-100);
+    }
+
+    .top-lock {
+        border-color: var(--text-300);
+        animation: animatedLock 1.8s ease-in-out;
+    }
+
+    .bottom-lock {
+        border-color: var(--text-300);
+        background-color: var(--text-300);
+    }
 }
