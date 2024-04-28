@@ -195,10 +195,10 @@
                         <h1 class="primary-xs" style="margin-top: 0; margin-bottom: 0.6vh">IBM Architecture Center
                             (React)</h1>
                         <!-- Github Button -->
-                        <a class="github-button" href="https://github.com/tcd-ibm/architecture-center-input-form"
+                        <!-- <a class="github-button" href="https://github.com/tcd-ibm/architecture-center-input-form"
                             data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large"
                             data-show-count="true"
-                            aria-label="Star tcd-ibm/architecture-center-input-form on GitHub">Star</a>
+                            aria-label="Star tcd-ibm/architecture-center-input-form on GitHub">Star</a> -->
                     </div>
                 </a>
             </div>
@@ -212,9 +212,9 @@
                         </div>
                         <h1 class="primary-xs" style="margin-top: 0; margin-bottom: 0.6vh">Generate Subtitles in Davinci
                             Resolve</h1>
-                        <a class="github-button" href="https://github.com/tmoroney/auto-subs"
+                        <!-- <a class="github-button" href="https://github.com/tmoroney/auto-subs"
                             data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large"
-                            data-show-count="true" aria-label="Star tmoroney/auto-subs on GitHub">Star</a>
+                            data-show-count="true" aria-label="Star tmoroney/auto-subs on GitHub">Star</a> -->
                     </div>
                 </a>
             </div>
@@ -229,10 +229,10 @@
                         <h1 class="primary-xs" style="margin-top: 0; margin-bottom: 0.6vh">Secure Cloud Encryption App
                         </h1>
                         <!-- Github Button -->
-                        <a class="github-button" href="https://github.com/tmoroney/Secure-Cloud-Encryption"
+                        <!-- <a class="github-button" href="https://github.com/tmoroney/Secure-Cloud-Encryption"
                             data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large"
                             data-show-count="true"
-                            aria-label="Star tcd-ibm/architecture-center-input-form on GitHub">Star</a>
+                            aria-label="Star tcd-ibm/architecture-center-input-form on GitHub">Star</a> -->
                     </div>
                 </a>
             </div>
@@ -259,7 +259,8 @@
                     </div>
                 </div>
                 <div class="bento-container">
-                    <h1 class="primary-medium" style="margin-top: 80%; font-size: calc(1.8rem + 1.8vw)">Photos</h1>
+                    <h1 class="primary-wide" style="margin-top: 15vh">Photos</h1>
+                    <h1 class="secondary">Showcase</h1>
                 </div>
             </div>
         </div>
@@ -287,72 +288,100 @@
 
     <div class="overlay" id="vision-modal" onclick="hideModalOverlay('vision-modal')">
         <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close-modal" onclick="hideModal('vision-modal')"><i class="fa fa-times"></i></span>
-            <h1 style="margin: 10px 0px 25px 0px">Vision Projects</h1>
-            <div class="project-list">
-                <ul>
-                    <li class="project-content" style="box-shadow: none">
-                        <div class="project-description">
-                            <h2>Ping Pong Analysis</h2>
-                            <p>Analyse a ping pong game using computer vision techniques.</p>
-                            <div class="view-project-buttons">
-                                <a href="https://drive.google.com/file/d/1eruPmhZh5wo0UQ2GHNAfRYZGoMhHraPn/view?usp=sharing"
-                                    class="project-button" style="padding-bottom: 0.52vw">
-                                    <i class="fa fa-file-pdf-o" style="font-size: 1.3rem; padding-right:0.5vw"></i>
-                                    <p class="project-button-text" style="margin-bottom: 4px;">Project Report</p>
-                                </a>
-                                <a href="https://github.com/tmoroney" class="project-button">
-                                    <i class="fa fa-github" style="font-size: 1.5rem; padding-right: 0.5vw"></i>
-                                    <p class="project-button-text">View Project &#8594;</p>
-                                </a>
+        <div class="modal-single">
+            <div class="modal-content">
+                <span class="close-modal" onclick="hideModal('vision-modal')"><i class="fa fa-times"></i></span>
+                <h1 style="margin: 10px 0px 25px 0px">Vision Projects</h1>
+                <div class="project-list">
+                    <ul>
+                        <li class="project-content" style="box-shadow: none">
+                            <div class="project-description">
+                                <h2>Ping Pong Analysis</h2>
+                                <p>Analyse a ping pong game using computer vision techniques.</p>
+                                <div class="view-project-buttons">
+                                    <a href="https://drive.google.com/file/d/1eruPmhZh5wo0UQ2GHNAfRYZGoMhHraPn/view?usp=sharing"
+                                        class="project-button" style="padding-bottom: 0.52vw">
+                                        <i class="fa fa-file-pdf-o" style="font-size: 1.3rem; padding-right:0.5vw"></i>
+                                        <p class="project-button-text" style="margin-bottom: 4px;">Project Report</p>
+                                    </a>
+                                    <a href="https://github.com/tmoroney" class="project-button">
+                                        <i class="fa fa-github" style="font-size: 1.5rem; padding-right: 0.5vw"></i>
+                                        <p class="project-button-text">View Project &#8594;</p>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <iframe class="project-preview"
-                            src="https://www.youtube.com/embed/XkYQM1eJ00U?si=a9c5kG0r_E5KPJ2S"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </li>
-                    <!-- Add more projects as needed -->
-                </ul>
+                            <iframe class="project-preview"
+                                src="https://www.youtube.com/embed/XkYQM1eJ00U?si=a9c5kG0r_E5KPJ2S"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </li>
+                        <!-- Add more projects as needed -->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="overlay" id="web-modal" onclick="hideModalOverlay('web-modal')">
         <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close-modal" onclick="hideModal('web-modal')"><i class="fa fa-times"></i></span>
-            <h1 style="margin: 10px 0px 25px 0px">Web Projects</h1>
-            <div class="project-list">
-                <ul>
-                    <li class="project-content" style="box-shadow: none">
-                        <div class="project-description">
-                            <h2>Weather App in Vue.js</h2>
-                            <p>Analyse a ping pong game using computer vision techniques.</p>
-                            <div class="view-project-buttons">
-                                <a href="https://drive.google.com/file/d/1eruPmhZh5wo0UQ2GHNAfRYZGoMhHraPn/view?usp=sharing"
-                                    class="project-button" style="padding-bottom: 0.52vw">
-                                    <i class="fa fa-file-pdf-o" style="font-size: 1.3rem; padding-right:0.5vw"></i>
-                                    <p class="project-button-text" style="margin-bottom: 4px;">Project Report</p>
-                                </a>
-                                <a href="https://github.com/tmoroney" class="project-button">
-                                    <i class="fa fa-github" style="font-size: 1.5rem; padding-right: 0.5vw"></i>
-                                    <p class="project-button-text">View Project &#8594;</p>
-                                </a>
+        <div class="modal-double">
+            <div class="modal-content">
+                <span class="close-modal" onclick="hideModal('web-modal')"><i class="fa fa-times"></i></span>
+                <h1 style="margin: 10px 0px 25px 0px">Web Projects</h1>
+                <div class="project-list">
+                    <ul>
+                        <li class="project-content" style="box-shadow: none">
+                            <div class="project-description">
+                                <h2>Weather App - Vue.js</h2>
+                                <p>Analyse a ping pong game using computer vision techniques.</p>
+                                <div class="view-project-buttons">
+                                    <a href="https://drive.google.com/file/d/1eruPmhZh5wo0UQ2GHNAfRYZGoMhHraPn/view?usp=sharing"
+                                        class="project-button" style="padding-bottom: 0.52vw">
+                                        <i class="fa fa-file-pdf-o" style="font-size: 1.3rem; padding-right:0.5vw"></i>
+                                        <p class="project-button-text" style="margin-bottom: 4px;">Project Report</p>
+                                    </a>
+                                    <a href="https://github.com/tmoroney" class="project-button">
+                                        <i class="fa fa-github" style="font-size: 1.5rem; padding-right: 0.5vw"></i>
+                                        <p class="project-button-text">View Project &#8594;</p>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <!-- <img src="assets/IBM-SWENG-demo.png" class="project-preview"
+                            <!-- <img src="assets/IBM-SWENG-demo.png" class="project-preview"
                                 alt="Architecture Portfolio Center (for IBM) screenshot"> -->
-                        <iframe class="project-preview"
-                            src="https://www.youtube.com/embed/q1AIFd9FIaw?si=Nrmeil54YtxFY-V5"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </li>
-                    <!-- Add more projects as needed -->
-                </ul>
+                            <iframe class="project-preview"
+                                src="https://www.youtube.com/embed/q1AIFd9FIaw?si=Nrmeil54YtxFY-V5"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </li>
+                        <li class="project-content" style="box-shadow: none">
+                            <div class="project-description">
+                                <h2>IBM Architecture Center - React</h2>
+                                <p>A central information hub for all projects under an organisation.</p>
+                                <div class="view-project-buttons">
+                                    <a href="https://drive.google.com/file/d/1eruPmhZh5wo0UQ2GHNAfRYZGoMhHraPn/view?usp=sharing"
+                                        class="project-button" style="padding-bottom: 0.52vw">
+                                        <i class="fa fa-file-pdf-o" style="font-size: 1.3rem; padding-right:0.5vw"></i>
+                                        <p class="project-button-text" style="margin-bottom: 4px;">Project Report</p>
+                                    </a>
+                                    <a href="https://github.com/tmoroney" class="project-button">
+                                        <i class="fa fa-github" style="font-size: 1.5rem; padding-right: 0.5vw"></i>
+                                        <p class="project-button-text">View Project &#8594;</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- <img src="assets/IBM-SWENG-demo.png" class="project-preview"
+                                alt="Architecture Portfolio Center (for IBM) screenshot"> -->
+                            <iframe class="project-preview"
+                                src="https://www.youtube.com/embed/69_Lp5XvD0Y?si=rijjWz1tSL0HJ_Vz"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </li>
+                        <!-- Add more projects as needed -->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
