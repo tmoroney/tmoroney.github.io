@@ -169,7 +169,7 @@ also inspired by: https://www.littlewebsite.co/
 @supports (display: grid) {
     .grid {
         display: grid;
-        grid-gap: 3vw;
+        grid-gap: 2.8vw;
         padding: 4vw;
         padding-top: 100px;
         grid-template-columns: repeat(2, 1fr);
@@ -221,7 +221,7 @@ also inspired by: https://www.littlewebsite.co/
 
     .grid .item {
         overflow: hidden;
-        border-radius: 18px;
+        border-radius: var(--curved-border);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1149,6 +1149,7 @@ body {
     font-size: calc(2rem + 2.5vw);
     font-weight: 800;
     color: var(--text-500);
+    transition: color 0.3s ease-in-out;
     /* text-shadow: 
         1px 1px 1px var(--text-800), 
         -1px -1px 1px var(--text-800), 
@@ -1215,8 +1216,8 @@ body {
 }
 
 .company-list h1 {
-    font-size: calc(1.6rem + 1vw);
-    margin: 0 4vh;
+    font-size: calc(1.8rem + 1vw);
+    margin-bottom: 1vh;
     color: var(--text-900);
 }
 
@@ -1238,7 +1239,7 @@ body {
 }
 
 .company-list ul li:hover {
-    background: var(--background-50);
+    background: var(--background-200);
 }
 
 
@@ -1259,11 +1260,11 @@ body {
 }
 
 .company-description h2 {
-    font-size: calc(1.2rem + 0.4vw);
+    font-size: calc(1rem + 0.4vw);
 }
 
 .company-description p {
-    font-size: calc(1.2rem + 0.2vw);
+    font-size: calc(1rem + 0.2vw);
     font-weight: 500;
 }
 
@@ -1298,6 +1299,11 @@ body {
 
 
 @media screen and (min-width: 750px) {
+
+    .company-list h1 {
+        font-size: calc(1.2rem + 1vw);
+    }
+
     .company-logo {
         width: 50%;
     }
@@ -1309,6 +1315,11 @@ body {
 }
 
 @media screen and (min-width: 1400px) {
+    .company-list h1 {
+        font-size: calc(1.6rem + 1vw);
+        margin-bottom: 1.5vh
+    }
+
     .featured-project {
         font-size: calc(0.5rem + 0.4vw);
         width: 100%;
@@ -1328,14 +1339,13 @@ body {
 }
 
 .project-list ul li {
-    padding: 0;
-    margin: 1vw;
     transition: background-color 0.3s ease;
     border-radius: 30px;
     background: var(--background-100);
     border-radius: var(--curved-border);
     border: 3px solid var(--text-800);
     box-shadow: var(--image-shadow);
+    margin: 1.5vh
 }
 
 .project-list ul li a {
@@ -1357,7 +1367,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5vw;
+    padding: 6vw;
 }
 
 .project-preview {
@@ -1460,7 +1470,7 @@ body {
 
     .project-list ul li {
         padding: 1vw;
-        margin: 1.2vh;
+        margin-bottom: 1.5vh;
     }
 
     .project-button {
@@ -1514,7 +1524,7 @@ body {
 
     .project-list ul li {
         padding: 0.7vw;
-        margin: 1.2vh;
+        margin-bottom: 1.5vh;
     }
 
     .project-button {
@@ -1706,5 +1716,9 @@ body {
     .bottom-lock {
         border-color: var(--text-300);
         background-color: var(--text-300);
+    }
+
+    .auto-subs {
+        color: var(--text-300);
     }
 }
