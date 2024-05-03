@@ -33,9 +33,12 @@
     <section id="home">
         <div id="theme-switcher">🌙</div>
         <div class="grid ">
+
+            <!-- Hero -->
             <div class="item" tabindex="1">
                 <div class="hero">
                 </div>
+                <p class="watermark">Photo by Tom Moroney</p>
                 <div class="centered-text">
                     <img class="profile-photo"
                         src="https://media.licdn.com/dms/image/C4E03AQE8xv7Zt_o4VA/profile-displayphoto-shrink_800_800/0/1651775804239?e=1715817600&v=beta&t=Dn_o9UgOQEMqN0oq7DLwoE8heXKTfCxjD3hfJDkWtiw"
@@ -45,8 +48,11 @@
                         style="font-size: 2.2rem"></a>
                     <a href="https://github.com/tmoroney" class="social-icon fa fa-github"
                         style="font-size: 2.2rem"></a>
+                    <p class="next-photo-button" onclick="nextPhoto()">Next Photo -></p>
                 </div>
             </div>
+
+            <!-- Large -->
             <div class="item" tabindex="2">
                 <div class="centered-text">
                     <div class="company-list">
@@ -90,8 +96,12 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Medium 1 -->
             <div class="item" tabindex="3">
             </div>
+
+            <!-- Medium 2 -->
             <div class="item" tabindex="4">
                 <div class="bento-container" style="text-shadow:none;">
                     <h1 class="primary" data-value="Encryption">Encryption</h1>
@@ -100,6 +110,8 @@
                 <div class="bottom-lock"></div>
                 <div class="top-lock"></div>
             </div>
+
+            <!-- Small 1 -->
             <div class="item" tabindex="5">
                 <div class="bento-container">
                     <h1 class="primary">AI</h1>
@@ -118,13 +130,9 @@
                 <div class="square"></div>
                 <div class="square"></div>
                 <div class="square"></div>
-                <!--
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                -->
             </div>
+
+            <!-- Small 2 -->
             <div class="item" tabindex="6" onclick="showModal('web-modal')">
                 <div class="bento-container">
                     <h1 class="primary">Web</h1>
@@ -155,6 +163,8 @@
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/512px-Spring_Boot.svg.png"
                         style="width: 40%" /></div>
             </div>
+
+            <!-- Small 3 -->
             <div class="item" tabindex="7" onclick="showModal('vision-modal')">
                 <div class="eye">
                     <div class="eyeball">
@@ -166,6 +176,8 @@
                     <h1 class="secondary">Projects</h1>
                 </div>
             </div>
+
+            <!-- Small 4 -->
             <div class="item" tabindex="8">
                 <div class="bento-container" style="margin-bottom: 1vh">
                     <h1 class="primary-medium">Graphics</h1>
@@ -185,68 +197,23 @@
                 <div class="cube"></div>
                 <div class="cube"></div>
             </div>
-            <div class="item" tabindex="9">
-                <a href="https://github.com/tcd-ibm/architecture-center-input-form" target="_blank" class="hidden-link">
-                    <div class="bento-container" style="text-shadow:none; margin: auto 0">
-                        <div class="overlay-container">
-                            <img src="assets/IBM-SWENG-demo.png"
-                                alt="Architecture Portfolio Center (for IBM) screenshot">
-                            <h1 class="featured-project">⭐ Featured ⭐</i>
-                            </h1>
-                        </div>
-                        <h1 class="primary-xs" style="margin-top: 0; margin-bottom: 0.6vh">IBM Architecture Center
-                            (React)</h1>
-                        <!-- Github Button -->
-                        <!-- <a class="github-button" href="https://github.com/tcd-ibm/architecture-center-input-form"
-                            data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large"
-                            data-show-count="true"
-                            aria-label="Star tcd-ibm/architecture-center-input-form on GitHub">Star</a> -->
+
+            <!-- Small 5 -->
+            <div class="item" tabindex="9" onclick="showModal('vision-modal')">
+                <div class="camera-body"></div>
+                <div class="camera">
+                    <div class="lens">
+                        <div class="flash"></div>
                     </div>
-                </a>
-            </div>
-            <div class="item" tabindex="10">
-                <a href="https://github.com/tmoroney/auto-subs" target="_blank" class="hidden-link">
-                    <div class="bento-container" style="text-shadow:none; margin: auto 0">
-                        <div class="overlay-container">
-                            <h1 class="featured-project">⭐ Featured ⭐</i>
-                            </h1>
-                            <img src="assets/AutoSubs-thumbnail.png" alt="AutoSubs screenshot">
-                        </div>
-                        <h1 class="primary-xs" style="margin-top: 0; margin-bottom: 0.6vh">Generate Subtitles in Davinci
-                            Resolve</h1>
-                        <!-- <a class="github-button" href="https://github.com/tmoroney/auto-subs"
-                            data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large"
-                            data-show-count="true" aria-label="Star tmoroney/auto-subs on GitHub">Star</a> -->
-                    </div>
-                </a>
-            </div>
-            <div class="item" tabindex="11">
-                <a href="https://github.com/tmoroney/Secure-Cloud-Encryption" target="_blank" class="hidden-link">
-                    <div class="bento-container" style="text-shadow:none; margin: auto 0">
-                        <div class="overlay-container">
-                            <h1 class="featured-project">⭐ Featured ⭐</i>
-                            </h1>
-                            <img src="assets/Secure-Cloud-Encryption-demo.png" alt="Secure Cloud Encryption screenshot">
-                        </div>
-                        <h1 class="primary-xs" style="margin-top: 0; margin-bottom: 0.6vh">Secure Cloud Encryption App
-                        </h1>
-                        <!-- Github Button -->
-                        <a class="github-button" href="https://github.com/tmoroney/Secure-Cloud-Encryption"
-                            data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large"
-                            data-show-count="true"
-                            aria-label="Star tcd-ibm/architecture-center-input-form on GitHub">Star</a> 
-                    </div>
-                </a>
-            </div>
-            <div class="item" tabindex="12">
-                <div class="bento-container" style="text-shadow:none;">
-                    <img src="https://assets-global.website-files.com/64248e7ed5f30d6effe57d5d/64612b0b2bd50f8f9e51fba0_Navbar%20logo_Word%20Mark%20white%20Large%20140px%20x%20480px_Word%20Mark%20Dark%20Grey%20Large%20140px%20x%20480px.png"
-                        alt="Channelsight Logo" id="channelsight-logo">
-                    <h1 class="primary-small">Internship</h1>
-                    <h1 class="secondary" style="margin-top: -0.2rem;">3 Months (2023)</h1>
+                </div>
+                <div class="bento-container">
+                    <h1 class="primary-wide" style="margin-top: 14.5vh">Photos</h1>
+                    <h1 class="secondary">Showcase</h1>
                 </div>
             </div>
-            <div class="item" tabindex="13">
+
+            <!-- Small 6 -->
+            <div class="item" tabindex="10">
                 <h1 class="auto-subs">AUTO<br>SUBS</h1>
                 <div class="bento-container" style="text-shadow:none; margin-bottom: 0.5vh;">
                     <h1 style="font-size: calc(1rem + 0.4vw);">featured* </h1>
@@ -255,17 +222,22 @@
                             data-show-count="true" aria-label="Star tmoroney/auto-subs on GitHub">Star</a>
                 </div>
             </div>
-            <div class="item" tabindex="14" onclick="showModal('vision-modal')">
-                <div class="camera-body"></div>
-                <div class="camera">
-                    <div class="lens">
-                        <div class="flash"></div>
-                    </div>
-                </div>
-                <div class="bento-container">
-                    <h1 class="primary-wide" style="margin-top: 15vh">Photos</h1>
-                    <h1 class="secondary">Showcase</h1>
-                </div>
+
+            <!-- Small 7 -->
+            <div class="item" tabindex="11">
+            </div>
+
+            <!-- Small 8 -->
+            <div class="item" tabindex="12">
+            </div>
+
+            <!-- Small 9 -->
+            <div class="item" tabindex="13">
+            </div>
+
+            <!-- Small 10 -->
+            <div class="item" tabindex="14">
+                
             </div>
         </div>
     </section>
