@@ -78,7 +78,7 @@ also inspired by: https://www.littlewebsite.co/
     --text-shadow: 0px 0px 40px rgba(0, 0, 0, 1);
     --inset-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
     --nav-background: rgba(110, 68, 43, 0.8);
-    --hero-brightness: brightness(60%);
+    --hero-brightness: 0.35;
     --hero-text-color: var(--text-900);
     --workday-logo-width: 82%;
     --trinity-aspect-ratio: 25/10;
@@ -149,7 +149,7 @@ also inspired by: https://www.littlewebsite.co/
     --text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     --inset-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
     --nav-background: rgba(212, 170, 145, 0.8);
-    --hero-brightness: brightness(60%);
+    --hero-brightness: 0.5;
     --hero-text-color: var(--text-50);
     --workday-logo-width: 77%;
     --trinity-aspect-ratio: 23/10;
@@ -164,6 +164,8 @@ also inspired by: https://www.littlewebsite.co/
     --radialSecondaryAccent: radial-gradient(#ffe100, #4c5828);
     --curved-border: 18px;
     --image-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    --image-hover-position: center right;
+    --hero-image-position: 50% 50%;
 }
 
 @supports (display: grid) {
@@ -249,7 +251,6 @@ also inspired by: https://www.littlewebsite.co/
         position: relative;
         padding: 1vw;
         /* box-shadow: var(--shadow); */
-        background-position: left bottom;
         background-size: 100% 100%;
     }
 }
@@ -379,16 +380,16 @@ body {
     width: 100%;
     height: 100%;
     opacity: 1;
-    background-image: url("https://lh3.googleusercontent.com/pw/AP1GczMR1YMomBDdWIZet3BxV68zZURvmKNrgnf0I7vr4dDQWwAvMYEUs8c2LWuAON1GK_FoQlQjmiNzsE4x-RbRQzKhd9ZLw7DClE_cL5Lh6eemnWlGvRCIjYeliXX1QyP-pB4u25_z5RTRWScTNTcwdgx1PQ=w1197-h901-s-no-gm?authuser=0");
-    background-size: cover;
+    background-image: url("https://lh3.googleusercontent.com/pw/AP1GczPrLR5lBRcqJuOqZY8lTKVSDbmhFvb_atkXlydmVFNK8JBj__TNRyBFY2s0jatAGbFsg2BCysbwX_T_GBIW1NBq5PGaZJ-2Slns4Hz5fEp1fb4SXtnk9F-932WPJn79wYtWExsjllNk2H02A6Fq7ry7qQ=w1197-h901-s-no-gm?authuser=0");
+    background-size:cover;
     z-index: 1;
     /* Center the background image */
-    background-position: bottom;
+    background-position: center;
     /* Add an inset shadow */
-    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
+    box-shadow: var(--inset-shadow);
     /* Add transition on hover */
-    transition: border 0.8s, background-position 0.8s, opacity 0.4s ease-in-out, background-size 0.8s;
-    filter: var(--hero-brightness);
+    transition: border 0.8s, background-position 0.8s, opacity 0.4s ease-in-out, background-size 0.8s, transform 0.3s ease;
+    filter: brightness(var(--hero-brightness));
     /* Adjust the brightness value as needed */
     /* Add vignette effect */
     border: 4px solid var(--background-500);
@@ -396,8 +397,14 @@ body {
 }
 
 .hero:hover {
-    background-position: center right;
-    /* opacity: 0.62; */
+    background-position: bottom right;
+}
+
+.hero-text {
+    text-align: center;
+    text-shadow: 0px 0px 80px rgba(0, 0, 0, 0.9);
+    z-index: 50;
+    pointer-events: none;
 }
 
 .next-photo-button {
@@ -467,7 +474,6 @@ body {
 
 .centered-text {
     text-align: center;
-    text-shadow: var(--text-shadow);
     z-index: 50;
     pointer-events: none;
 }
@@ -1367,7 +1373,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 6vw;
+    padding: 2vw;
 }
 
 .project-preview {
@@ -1438,13 +1444,12 @@ body {
     overflow-y: auto;
     text-align: center;
     transition: transform 0.2s ease-in-out;
-    transform: scale(0.7);
+    transform: scale(0.7); /* Start scaled down */
     max-height: 97vh;
-    /* Start scaled down */
 }
 
 .close-modal {
-    margin: 2.8vh 6vw;
+    margin: 4vh 6vw;
     position: fixed;
     font-size: 30px;
     right: 0;
@@ -1457,8 +1462,9 @@ body {
 }
 
 .modal-content h1 {
-    padding-top: 1.5vh;
+    padding-top: 3.5vh;
     font-size: 2rem;
+    margin: 0px 0px 20px 0px
 }
 
 
@@ -1488,9 +1494,14 @@ body {
 }
 
 @media screen and (min-width: 1400px) {
+    .close-modal {
+        margin: 0vh 6vw;
+    }
+
     .modal-content {
         padding: 20px;
         width: 80%;
+        margin: 0 auto;
     }
 
     .modal-single {
@@ -1498,7 +1509,7 @@ body {
     }
 
     .modal-double {
-        margin: 6vh auto;
+        margin: 5vh auto;
     }
 
     .project-content {
