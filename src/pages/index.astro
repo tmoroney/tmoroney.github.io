@@ -76,6 +76,11 @@ const projects = [
     tags: ["PyTorch", "MLX", "VLMs", "LLMs", "Video AI"]
   }
 ];
+
+const siteTitle = "Tom Moroney - Software Engineer";
+const siteDescription = "Software engineer in Dublin working on backend security, developer tooling, AI-assisted documentation, and creator-focused video tools.";
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const previewImageUrl = new URL("/social-preview.jpg", Astro.site);
 ---
 
 <!doctype html>
@@ -83,8 +88,24 @@ const projects = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tom Moroney - Software Engineer</title>
+    <title>{siteTitle}</title>
+    <meta name="description" content={siteDescription} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:image" content={previewImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tom Moroney, software engineer at Workday" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tom Moroney" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content={previewImageUrl} />
+    <meta name="twitter:image:alt" content="Tom Moroney, software engineer at Workday" />
     <script is:inline>
       const savedTheme = localStorage.getItem("theme");
       const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -457,12 +478,16 @@ const projects = [
 
   .intro p a {
     color: var(--text);
-    border-bottom: 2px dotted var(--line);
+    border-bottom: 2px dotted var(--muted);
     transition: border-color 150ms ease, opacity 150ms ease;
   }
 
   .intro p a:hover {
     border-color: var(--text);
+  }
+
+  :root[data-theme="dark"] .intro p a {
+    border-color: var(--muted);
   }
 
   .section {
@@ -481,12 +506,16 @@ const projects = [
   }
 
   .site-footer a {
-    border-bottom: 2px dotted var(--line);
+    border-bottom: 2px dotted var(--muted);
     transition: border-color 150ms ease, opacity 150ms ease;
   }
 
   .site-footer a:hover {
     border-color: var(--text);
+  }
+
+  :root[data-theme="dark"] .site-footer a {
+    border-color: var(--muted);
   }
 
   .section-header {
@@ -704,10 +733,18 @@ const projects = [
   .project-heading h3 {
     margin-bottom: 0;
     min-width: 0;
+    line-height: 1.22;
   }
 
   .project-heading a {
-    border-bottom: 2px dotted rgb(0 0 0 / 0.13);
+    text-decoration: none;
+  }
+
+  .project-heading a:hover {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
   }
 
   .project-card p {
