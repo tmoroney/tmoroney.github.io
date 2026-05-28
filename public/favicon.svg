@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42">
+  <defs>
+    <clipPath id="circle">
+      <circle cx="21" cy="21" r="21"/>
+    </clipPath>
+  </defs>
+  <image href="/selfie.jpg" width="42" height="42" clip-path="url(#circle)"/>
+</svg>

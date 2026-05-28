@@ -1,0 +1,17 @@
+{
+  "name": "tom-moroney-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@lucide/astro": "^1.17.0",
+    "astro": "^5.8.0",
+    "non.geist": "^2.0.1",
+    "sharp": "^0.34.5"
+  }
+}
