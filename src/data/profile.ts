@@ -108,7 +108,7 @@ export const education: Education[] = [
   {
     school: "Trinity College Dublin",
     degree: "B.A. (Moderatorship) in Computer Science",
-    honours: "First Class Honours",
+    honours: "Second Class Honours",
     period: "2020 – 2024"
   }
 ];
