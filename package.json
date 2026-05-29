@@ -5,13 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "tsx scripts/generate-llms-txt.ts && astro build",
+    "preview": "astro preview",
+    "generate-llms": "tsx scripts/generate-llms-txt.ts"
   },
   "dependencies": {
     "@lucide/astro": "^1.17.0",
     "astro": "^5.8.0",
     "non.geist": "^2.0.1",
     "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "tsx": "^4.22.3"
   }
 }

@@ -2,83 +2,14 @@
 import 'non.geist';
 import 'non.geist/mono';
 import { Moon, Sun, Mail } from '@lucide/astro';
+import { experiences, projects, profile } from '../data/profile';
 
 type DetailPart = string | { text: string; highlight: true };
 
 const mark = (text: string): DetailPart => ({ text, highlight: true });
 
-const experiences = [
-  {
-    company: "Workday",
-    logo: "/workday.png",
-    role: "Software Engineer",
-    period: "2025 - Present",
-    details: [
-      [mark("Architected a high-performance .NET and Java/Log4j redaction framework"), " to remove ", mark("sensitive customer data from logs"), " and ", mark("obfuscate exception stack traces"), " across ", mark("10 microservices"), ", ensuring ", mark("minimal performance impact"), " while coordinating rollout and testing with service owners, contributing to Adaptive Planning's FedRAMP audit preparation for federal approval."],
-      ["Built a ", mark("secure Java lookup API"), " and collaborated with the ", mark(".NET team"), " to integrate it as a data provider for their lookup tool UI, enabling support teams to ", mark("map internal IDs to sensitive data"), " and perform ", mark("reverse lookups from UI values to internal IDs"), " for proactive log searching through ", mark("controlled access paths"), ", maintaining obfuscation controls."],
-      ["Developed an ", mark("AI-powered living documentation and agentic Q&A system"), " that summarizes code from ", mark("AST leaf nodes upward"), ", keeping docs synchronized and answering developer queries."]
-    ]
-  },
-  {
-    company: "Workday",
-    logo: "/workday.png",
-    role: "Software Engineer Intern",
-    period: "2024 - 2024",
-    details: [
-      ["Engineered ", mark("4 Java/Spring Boot APIs"), " for database bootstrapping and multi-tenant initialisation, supporting ", mark("Adaptive Planning's migration"), " to Workday's unified cloud platform."],
-      ["Implemented transactional rollback, SQL fixes for import defects, and a ", mark("database-simulating test framework"), " achieving ", mark("92% line coverage"), ", improving tenant migration reliability."]
-    ]
-  },
-  {
-    company: "ChannelSight",
-    logo: "/channelsight.png",
-    role: "Software Engineer Intern",
-    period: "2023 - 2023",
-    details: [
-      ["Developed ", mark("web crawlers"), " for ecommerce product and review data, analyzing ", mark("DOM structures and network traffic"), " to create resilient selectors and extraction logic."],
-      ["Implemented ", mark("proxy rotation, custom request headers, and rate limiting"), " to reduce scraper failures from layout changes and ", mark("bot-detection mechanisms"), "."]
-    ]
-  },
-  {
-    company: "Trinity College Dublin",
-    logo: "/trinity-college-dublin.jpg",
-    role: "Class Representative",
-    period: "2022 - 2023",
-    details: [
-      ["Elected as ", mark("class representative"), " for around ", mark("60 Integrated Computer Science students"), ", acting as a liaison between students and faculty to address concerns and improve the ", mark("academic experience"), "."]
-    ]
-  }
-];
-
-const projects = [
-  {
-    title: "AutoSubs",
-    href: "https://github.com/tmoroney/auto-subs",
-    date: "Nov. 2023 - Present",
-    summary: "Open-source, cross-platform desktop app for video creators to generate, translate, label speakers with unique per-speaker styling, and place subtitles directly into video editor timelines. Built with React/TypeScript, Rust, WebView, LuaJIT, and custom Adobe extensions.",
-    details: [
-      ["Built and maintained over 2+ years with ", mark("3.5K+ stars and 400K+ downloads"), ", using a ", mark("Rust backend"), " to stay under 200MB idle alongside video editors."],
-      ["Developed editor integrations for DaVinci Resolve via an embedded ", mark("LuaJIT HTTP bridge"), " and Adobe apps via custom extensions for ", mark("timeline audio extraction and subtitle placement"), "."],
-      ["Implemented ", mark("audio preprocessing and on-device model management"), ", automatic language-based model selection, translation, and a formatting engine optimized for ", mark("CJK, Korean, RTL, Indic, and SE Asian"), " line-breaking and timing constraints."]
-    ],
-    tags: ["Rust", "TypeScript", "React", "Lua", "3.5K+ stars", "400K+ downloads"]
-  },
-  {
-    title: "Beyond Automation: AI Framework for Intelligent Cinematographic Editing",
-    href: "https://drive.google.com/file/d/1zNl1KtIq2jHFq87_K8YLuDgQVhoTLSwD/view?usp=sharing",
-    date: "Sep. 2024 - Apr. 2025",
-    summary: "Multimodal video-editing framework that reached 72.5% shot attribute classification accuracy, fusing visual composition, optical flow, audio-temporal patterns, and narrative reasoning for next-shot recommendations.",
-    details: [
-      ["Achieved ", mark("72.5% accuracy"), " in shot attribute classification, a ", mark("16 percentage point improvement"), " over the Anatomy of Video Editing benchmark."],
-      ["Developed a ", mark("multimodal pipeline optimized for Apple's MLX framework"), ", enabling real-time, on-device inference by fusing visual composition, optical flow, and audio-temporal patterns."],
-      ["Implemented a ", mark("narrative reasoning engine"), " for next-shot recommendations using ", mark("VLMs and LLMs"), " to bridge technical pattern recognition and semantic story comprehension."]
-    ],
-    tags: ["PyTorch", "MLX", "VLMs", "LLMs", "Video AI"]
-  }
-];
-
-const siteTitle = "Tom Moroney - Software Engineer";
-const siteDescription = "Software engineer in Dublin working on backend security, developer tooling, AI-assisted documentation, and creator-focused video tools.";
+const siteTitle = `${profile.name} - ${profile.title}`;
+const siteDescription = profile.description;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const previewImageUrl = new URL("/social-preview.jpg", Astro.site);
 ---
@@ -92,6 +23,7 @@ const previewImageUrl = new URL("/social-preview.jpg", Astro.site);
     <meta name="description" content={siteDescription} />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="alternate" type="text/markdown" title="LLM-friendly version" href="/llms.txt" />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={siteDescription} />
     <meta property="og:image" content={previewImageUrl} />
