@@ -119,6 +119,7 @@ const previewImageUrl = new URL("/social-preview.jpg", Astro.site);
     </script>
   </head>
   <body>
+    <script is:inline>document.body.classList.add("is-loaded");</script>
     <main class="site-shell">
       <header class="intro reveal" style="--delay: 80ms">
         <img class="avatar" src="/me.jpg" alt="Tom Moroney" />
@@ -259,7 +260,6 @@ const previewImageUrl = new URL("/social-preview.jpg", Astro.site);
       });
 
       window.addEventListener("load", () => {
-        document.body.classList.add("is-loaded");
         syncButtons();
       });
 
