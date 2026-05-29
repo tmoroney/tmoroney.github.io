@@ -1,5 +1,7 @@
 export type DetailPart = string | { text: string; highlight: true };
 export type Detail = DetailPart[];
+export type IntroPart = string | { text: string; href: string };
+export type IntroParagraph = IntroPart[];
 
 export interface Experience {
   company: string;
@@ -95,5 +97,24 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/tom-moroney1/",
   github: "https://github.com/tmoroney",
   location: "Dublin",
-  description: "Software engineer from Dublin working on backend security, developer tooling, AI-assisted documentation, and creator-focused video tools. Currently at Workday."
+  description: "Software engineer from Dublin with a Masters in Computer Science (M.C.S.) from Trinity College Dublin, working on backend security, developer tooling, AI-assisted documentation, and creator-focused video tools. Currently at Workday.",
+  intro: [
+    [
+      "I'm a software engineer from Dublin with a Masters in Computer Science (M.C.S.) from Trinity College Dublin, currently working full-time at ",
+      { text: "Workday", href: "https://www.workday.com/" },
+      " on backend security and developer tooling for enterprise systems, including sensitive-data redaction, controlled access workflows, and AI-assisted documentation."
+    ],
+    [
+      "Outside of work, I build ",
+      { text: "AutoSubs", href: "https://github.com/tmoroney/auto-subs" },
+      ", an open-source, cross-platform desktop app helping hundreds of thousands of creators automatically generate subtitles for their videos in any language, saving them time while making their videos more engaging and accessible to global audiences. I'm also developing ",
+      { text: "SubSlate", href: "https://subslate.app/" },
+      ", a new kind of video editor."
+    ],
+    [
+      "If you wish to get in contact, drop me an email at ",
+      { text: "tom.moroney.dev@gmail.com", href: "mailto:tom.moroney.dev@gmail.com" },
+      "."
+    ]
+  ] satisfies IntroParagraph[]
 };
