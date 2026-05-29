@@ -102,13 +102,13 @@ export const education: Education[] = [
     school: "Trinity College Dublin",
     degree: "Masters in Computer Science (M.C.S.)",
     honours: "First Class Honours",
-    period: "Sept. 2024 – May 2025"
+    period: "2024 – 2025"
   },
   {
     school: "Trinity College Dublin",
     degree: "B.A. (Moderatorship) in Computer Science",
     honours: "First Class Honours",
-    period: "Sept. 2020 – May 2024"
+    period: "2020 – 2024"
   }
 ];
 
