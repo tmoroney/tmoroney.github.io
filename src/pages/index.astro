@@ -2,7 +2,7 @@
 import 'non.geist';
 import 'non.geist/mono';
 import { Moon, Sun, Mail } from '@lucide/astro';
-import { experiences, projects, profile } from '../data/profile';
+import { education, experiences, projects, profile } from '../data/profile';
 
 const siteTitle = `${profile.name} - ${profile.title}`;
 const siteDescription = profile.description;
@@ -122,7 +122,30 @@ const previewImageUrl = new URL("/social-preview.jpg", Astro.site);
         </div>
       </section>
 
-      <section class="section reveal" style="--delay: 440ms" aria-labelledby="projects-title">
+      <section class="section reveal" style="--delay: 440ms" aria-labelledby="education-title">
+        <div class="section-header">
+          <h2 id="education-title">Education</h2>
+        </div>
+
+        <div class="education-list">
+          {education.map((item) => (
+            <article class="education-item">
+              <div class="education-heading">
+                <div>
+                  <h3>{item.school}</h3>
+                  <p>{item.degree}</p>
+                </div>
+                <div class="education-meta">
+                  <span>{item.honours}</span>
+                  <time>{item.period}</time>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section reveal" style="--delay: 500ms" aria-labelledby="projects-title">
         <div class="section-header">
           <h2 id="projects-title">Featured Projects</h2>
         </div>
@@ -154,7 +177,7 @@ const previewImageUrl = new URL("/social-preview.jpg", Astro.site);
         </div>
       </section>
 
-      <footer class="site-footer reveal" style="--delay: 500ms">
+      <footer class="site-footer reveal" style="--delay: 560ms">
         <span>Tom Moroney &copy; 2026</span>
         <a href="https://www.linkedin.com/in/tom-moroney1/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
       </footer>
@@ -461,6 +484,54 @@ const previewImageUrl = new URL("/social-preview.jpg", Astro.site);
     font-size: 1.15rem;
     font-weight: 480;
     font-family: 'GeistMono-Variable', ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
+  }
+
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px dashed var(--line);
+  }
+
+  .education-item {
+    padding: 20px 2px;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  .education-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .education-heading h3 {
+    margin: 0 0 12px;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .education-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .education-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    color: var(--text);
+    font-size: 0.9rem;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .education-meta time {
+    font-variant-numeric: tabular-nums;
   }
 
   .experience-list {
@@ -847,6 +918,17 @@ const previewImageUrl = new URL("/social-preview.jpg", Astro.site);
 
     .section-header {
       margin-bottom: 28px;
+    }
+
+    .education-heading {
+      display: grid;
+      gap: 8px;
+    }
+
+    .education-meta {
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
     .experience-header {

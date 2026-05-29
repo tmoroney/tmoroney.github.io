@@ -20,6 +20,13 @@ export interface Project {
   tags: string[];
 }
 
+export interface Education {
+  school: string;
+  degree: string;
+  honours: string;
+  period: string;
+}
+
 export const experiences: Experience[] = [
   {
     company: "Workday",
@@ -87,6 +94,21 @@ export const projects: Project[] = [
       ["Implemented a ", { text: "narrative reasoning engine", highlight: true }, " for next-shot recommendations using ", { text: "VLMs and LLMs", highlight: true }, " to bridge technical pattern recognition and semantic story comprehension."]
     ],
     tags: ["PyTorch", "MLX", "VLMs", "LLMs", "Video AI"]
+  }
+];
+
+export const education: Education[] = [
+  {
+    school: "Trinity College Dublin",
+    degree: "Masters in Computer Science (M.C.S.)",
+    honours: "First Class Honours",
+    period: "Sept. 2024 – May 2025"
+  },
+  {
+    school: "Trinity College Dublin",
+    degree: "B.A. (Moderatorship) in Computer Science",
+    honours: "First Class Honours",
+    period: "Sept. 2020 – May 2024"
   }
 ];
 

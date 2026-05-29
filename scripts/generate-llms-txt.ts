@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs';
 import { join } from 'path';
-import { experiences, projects, profile } from '../src/data/profile';
+import { education, experiences, projects, profile } from '../src/data/profile';
 
 function generateLlmsTxt(): string {
   let content = `# ${profile.name}\n\n`;
@@ -14,6 +14,13 @@ function generateLlmsTxt(): string {
   content += `- [Email](mailto:${profile.email}) : Primary contact for professional inquiries\n`;
   content += `- [LinkedIn](${profile.linkedin}) : Professional profile and connections\n`;
   content += `- [GitHub](${profile.github}) : Open source projects and contributions\n\n`;
+
+  content += `## Education\n\n`;
+
+  for (const item of education) {
+    content += `${item.school} (${item.period}): ${item.degree}, ${item.honours}.\n`;
+  }
+  content += `\n`;
   
   content += `## Featured Work\n\n`;
   
