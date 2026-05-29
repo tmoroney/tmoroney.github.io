@@ -107,9 +107,15 @@ const previewImageUrl = new URL("/social-preview.jpg", Astro.site);
     <meta name="twitter:image" content={previewImageUrl} />
     <meta name="twitter:image:alt" content="Tom Moroney, software engineer at Workday" />
     <script is:inline>
-      const savedTheme = localStorage.getItem("theme");
-      const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      document.documentElement.dataset.theme = savedTheme || preferredTheme;
+      (function() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.documentElement.dataset.theme = savedTheme;
+        } else {
+          const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.dataset.theme = isDark ? "dark" : "light";
+        }
+      })();
     </script>
   </head>
   <body>
