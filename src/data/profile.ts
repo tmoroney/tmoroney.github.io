@@ -119,10 +119,10 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/tom-moroney1/",
   github: "https://github.com/tmoroney",
   location: "Dublin",
-  description: "Software engineer from Dublin with a Masters in Computer Science (M.C.S.) from Trinity College Dublin, working on backend security, developer tooling, AI-assisted documentation, and creator-focused video tools. Currently at Workday.",
+  description: "Software engineer from Dublin working on backend security, developer tooling, AI-assisted documentation, and creator-focused video tools. Currently at Workday.",
   intro: [
     [
-      "I'm a software engineer from Dublin with a Masters in Computer Science (M.C.S.) from Trinity College Dublin, currently working full-time at ",
+      "I'm a software engineer from Dublin, currently working full-time at ",
       { text: "Workday", href: "https://www.workday.com/" },
       " on backend security and developer tooling for enterprise systems, including sensitive-data redaction, controlled access workflows, and AI-assisted documentation."
     ],
