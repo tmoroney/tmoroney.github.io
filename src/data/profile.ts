@@ -34,9 +34,10 @@ export const experiences: Experience[] = [
     role: "Software Engineer",
     period: "2025 - Present",
     details: [
-      [{ text: "Architected a high-performance .NET and Java/Log4j redaction framework", highlight: true }, " to remove ", { text: "sensitive customer data from logs", highlight: true }, " and ", { text: "obfuscate exception stack traces", highlight: true }, " across ", { text: "10 microservices", highlight: true }, ", ensuring ", { text: "minimal performance impact", highlight: true }, " while coordinating rollout and testing with service owners, contributing to Adaptive Planning's FedRAMP audit preparation for federal approval."],
-      ["Built a ", { text: "secure Java lookup API", highlight: true }, " and collaborated with the ", { text: ".NET team", highlight: true }, " to integrate it as a data provider for their lookup tool UI, enabling support teams to ", { text: "map internal IDs to sensitive data", highlight: true }, " and perform ", { text: "reverse lookups from UI values to internal IDs", highlight: true }, " for proactive log searching through ", { text: "controlled access paths", highlight: true }, ", maintaining obfuscation controls."],
-      ["Developed an ", { text: "AI-powered living documentation and agentic Q&A system", highlight: true }, " that summarizes code from ", { text: "AST leaf nodes upward", highlight: true }, ", keeping docs synchronized and answering developer queries."]
+      ["Architected a high-performance ", { text: ".NET and Java/Log4j redaction framework", highlight: true }, " that removes sensitive customer data from logs and obfuscates exception stack traces across ", { text: "10 microservices", highlight: true }, " with minimal performance impact."],
+      ["Coordinated rollout and testing with service owners, contributing to Adaptive Planning's ", { text: "FedRAMP audit preparation", highlight: true }, " for federal approval."],
+      ["Built a ", { text: "secure Java lookup API", highlight: true }, ", integrated with the .NET lookup tool UI, letting support teams map internal IDs to sensitive data and run reverse lookups through ", { text: "controlled access paths", highlight: true }, "."],
+      ["Developed an ", { text: "AI-powered living documentation and Q&A system", highlight: true }, " that summarises code from AST leaf nodes upward, keeping docs synchronised and answering developer queries."]
     ]
   },
   {
@@ -77,9 +78,9 @@ export const projects: Project[] = [
     date: "Nov. 2023 - Present",
     summary: "Open-source, cross-platform desktop app for video creators to generate, translate, label speakers with unique per-speaker styling, and place subtitles directly into video editor timelines. Built with React/TypeScript, Rust, WebView, LuaJIT, and custom Adobe extensions.",
     details: [
-      ["Built and maintained over 2+ years with ", { text: "3.5K+ stars and 400K+ downloads", highlight: true }, ", using a ", { text: "Rust backend", highlight: true }, " to stay under 200MB idle alongside video editors."],
-      ["Developed editor integrations for DaVinci Resolve via an embedded ", { text: "LuaJIT HTTP bridge", highlight: true }, " and Adobe apps via custom extensions for ", { text: "timeline audio extraction and subtitle placement", highlight: true }, "."],
-      ["Implemented ", { text: "audio preprocessing and on-device model management", highlight: true }, ", automatic language-based model selection, translation, and a formatting engine optimized for ", { text: "CJK, Korean, RTL, Indic, and SE Asian", highlight: true }, " line-breaking and timing constraints."]
+      ["Built and maintained over 2+ years with ", { text: "3.5K+ stars and 400K+ downloads", highlight: true }, ", using a Rust backend to stay under 200MB idle alongside video editors."],
+      ["Developed editor integrations for DaVinci Resolve via an embedded ", { text: "LuaJIT HTTP bridge", highlight: true }, " and Adobe apps via custom extensions for timeline audio extraction and subtitle placement."],
+      ["Implemented audio preprocessing and on-device model management, automatic language-based model selection, translation, and a formatting engine optimized for ", { text: "CJK, Korean, RTL, Indic, and SE Asian", highlight: true }, " line-breaking and timing constraints."]
     ],
     tags: ["Rust", "TypeScript", "React", "Lua", "3.5K+ stars", "400K+ downloads"]
   },
@@ -89,9 +90,9 @@ export const projects: Project[] = [
     date: "Sep. 2024 - Apr. 2025",
     summary: "Multimodal video-editing framework that reached 72.5% shot attribute classification accuracy, fusing visual composition, optical flow, audio-temporal patterns, and narrative reasoning for next-shot recommendations.",
     details: [
-      ["Achieved ", { text: "72.5% accuracy", highlight: true }, " in shot attribute classification, a ", { text: "16 percentage point improvement", highlight: true }, " over the Anatomy of Video Editing benchmark."],
+      ["Achieved ", { text: "72.5% accuracy", highlight: true }, " in shot attribute classification, a 16 percentage point improvement over the Anatomy of Video Editing benchmark."],
       ["Developed a ", { text: "multimodal pipeline optimized for Apple's MLX framework", highlight: true }, ", enabling real-time, on-device inference by fusing visual composition, optical flow, and audio-temporal patterns."],
-      ["Implemented a ", { text: "narrative reasoning engine", highlight: true }, " for next-shot recommendations using ", { text: "VLMs and LLMs", highlight: true }, " to bridge technical pattern recognition and semantic story comprehension."]
+      ["Implemented a narrative reasoning engine for next-shot recommendations using ", { text: "VLMs and LLMs", highlight: true }, " to bridge technical pattern recognition and semantic story comprehension."]
     ],
     tags: ["PyTorch", "MLX", "VLMs", "LLMs", "Video AI"]
   }
